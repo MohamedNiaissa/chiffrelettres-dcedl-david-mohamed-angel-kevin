@@ -27,7 +27,7 @@ public class Main {
             choixJouer = scan.nextLine();
             switch (choixJouer) {
 
-                case "1" -> NombreJouer.jouerNombreJouer();
+                case "1" -> LancerJeu.menuSelectionMode();
                 case "2" -> {
                     System.out.println("Vous avez quitté le jeu");
                     jeuActif = false;
