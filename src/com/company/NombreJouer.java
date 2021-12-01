@@ -1,5 +1,7 @@
 package com.company;
 
+import java.util.Arrays;
+
 public class NombreJouer {
     public static void chrono(int seconde){
         int temps = seconde;
@@ -38,14 +40,25 @@ public class NombreJouer {
         switch (choixJouer) {
             case "1" -> {
                 System.out.println("Joueur contre machine");
+                for (int i = 0; i < 3; i++) {
+                saisieUtilisateur.raffraichirRang();
+                int[] listePlaque = new int[6];
+                for (int j = 0; j < 6; j++) {
+                    System.out.println("Dans quel rang piochez-vous ?");
+                    String choix = Main.scan.next();
+                    listePlaque[j] = saisieUtilisateur.saisieRang(choix);
+                }
+                    System.out.println((int) (Math.random()*(999)+101));
+                System.out.println(Arrays.toString(listePlaque));
                 chrono(60);
                 long debut = System.currentTimeMillis();
-                String test30 = Main.scan.nextLine();
+                String test30 = Main.scan.next();
                 long fin = System.currentTimeMillis();
                 if (fin-debut > 30000){
                     System.out.println("Vous avez été trop long");
                 }
                 System.out.println("Résultat enregistré");
+                }
             }
             case "2" -> System.out.println("Joueur 1 contre jouer 2");
             case "3" -> {
