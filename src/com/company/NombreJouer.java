@@ -1,7 +1,7 @@
 package com.company;
 
 public class NombreJouer {
-    public static void jouerNombreJouer() {
+    public static void commencerJeu() {
         System.out.println("""
                 *********************************
                 Sélectionnez le nombre de joueurs
@@ -16,13 +16,14 @@ public class NombreJouer {
         choixJouer = Main.scan.nextLine();
         switch (choixJouer) {
             case "1" -> System.out.println("Joueur contre machine");
-            case "2" -> System.out.println("Joueur 1 contre jouer 2");
+            case "2" -> System.out.println("Joueur 1 contre joueur 2");
             case "3" -> {
             }
             default -> {
                 System.out.println("Option non reconnue");
-                jouerNombreJouer();
+                commencerJeu();
             }
         }
+
     }
 }
