@@ -21,17 +21,15 @@ public class Main {
                     2) Quitter
                     """);
 
-            switch (scan.nextInt()) {
-                case 1 :
-                    NombreJouer.jouerNombreJouer();
-                    break;
-                case 2 :
+            String choixJouer = "";
+            choixJouer = scan.nextLine();
+            switch (choixJouer) {
+                case "1" -> NombreJouer.jouerNombreJouer();
+                case "2" -> {
                     System.out.println("Vous avez quitté le jeu");
                     jeuActif = false;
-                    break;
-                default:
-                    System.err.println("Option non reconnue");
-                    break;
+                }
+                default -> System.err.println("Option non reconnue");
             }
         }
     }
