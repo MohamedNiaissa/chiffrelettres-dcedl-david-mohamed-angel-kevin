@@ -15,7 +15,7 @@ public class RecupMots {
         try
         {
             // Le fichier d'entrée
-            File file = new File("/Users/mohamed/Desktop/ProjetAlgoAvancee/src/com/company/liste_francais.txt");
+            File file = new File("src/com/company/liste_francais.txt");
             // Créer l'objet File Reader
             FileReader fr = new FileReader(file);
             // Créer l'objet BufferedReader
