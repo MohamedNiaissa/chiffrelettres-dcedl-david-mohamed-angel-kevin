@@ -12,7 +12,11 @@ public class Main {
                 ********************************
                 """);
 
-        RecupMots.extraireMots();
+        // test recuperation mots
+        // RecupMots.extraireMots();
+
+        String lettre = saisieUtilisateur.saisieConsVoy();
+        System.out.println(lettre);
 
         boolean jeuActif = true;
         while (jeuActif) {

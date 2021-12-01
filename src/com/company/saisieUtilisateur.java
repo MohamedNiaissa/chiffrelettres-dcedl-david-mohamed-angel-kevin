@@ -1,8 +1,41 @@
 package com.company;
 
+import java.util.Random;
+
 public class saisieUtilisateur {
 
 
 
+
+    public static String saisieConsVoy(){
+
+        String[] voyelles = {"a","e","i","o","u","y"};
+        String[] consonnes = {"b","c","d","f","g","h","j","k","l","m","n","p","q","r","s","t","v","w","x","z"};
+
+        System.out.println("Voulez-vous une consonne ou une voyelle ? (c ou v) ");
+
+        String randomValeur ="";
+
+        boolean valeurCorreect = true;
+        while(valeurCorreect){
+            String valeurUtilisateur = Main.scan.nextLine();
+
+            if(valeurUtilisateur.equals("c")){
+                int rnd = new Random().nextInt(consonnes.length);
+                randomValeur = consonnes[rnd];
+                valeurCorreect = false;
+            }else if(valeurUtilisateur.equals("v")){
+                int rnd = new Random().nextInt(voyelles.length);
+                randomValeur = voyelles[rnd];
+                valeurCorreect = false;
+            }else {
+                System.out.println("Veuillez mettre les commandes : c ou v ");
+            }
+        }
+
+
+      return randomValeur;
+
+    }
 
 }
