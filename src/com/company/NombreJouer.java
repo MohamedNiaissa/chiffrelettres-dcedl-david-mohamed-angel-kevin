@@ -1,6 +1,19 @@
 package com.company;
 
 public class NombreJouer {
+    public static void chrono(){
+        int temps = 60;
+        System.out.println(temps);
+        for (int i = 0; i < 60; i++) {
+            try{
+                Thread.sleep(1000);
+                temps--;
+                System.out.println(temps);
+            }catch(InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+    }
     public static void jouerNombreJouer() {
         System.out.println("""
                 *********************************
@@ -15,7 +28,10 @@ public class NombreJouer {
         String choixJouer = "";
         choixJouer = Main.scan.nextLine();
         switch (choixJouer) {
-            case "1" -> System.out.println("Joueur contre machine");
+            case "1" -> {
+                System.out.println("Joueur contre machine");
+                chrono();
+            }
             case "2" -> System.out.println("Joueur 1 contre jouer 2");
             case "3" -> {
             }
