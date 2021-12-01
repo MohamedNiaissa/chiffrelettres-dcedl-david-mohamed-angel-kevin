@@ -17,10 +17,10 @@ public class Lettre {
 
         for (int i = 1; i <= 5 ; i++) {
 
-            String lettreUtilisateur = saisieUtilisateur.saisieConsVoy();
+            String lettreUtilisateur = SaisieUtilisateur.saisieConsVoy();
             lettreChoisis.add(lettreUtilisateur);
 
-            String lettreMachine = saisieUtilisateur.saisieConsVoyRobot();
+            String lettreMachine = SaisieUtilisateur.saisieConsVoyRobot();
             lettreChoisis.add(lettreMachine);
 
 

@@ -21,6 +21,7 @@ public class LancerJeu {
                 System.out.println("Joueur contre machine");
                 Lettre.partieLettreUnJoueur();
                 Chrono.chrono(60);
+                //String motUtilisateur = SaisieUtilisateur.saisitMot();
 
                /* long debut = System.currentTimeMillis();
                 long fin = System.currentTimeMillis();
