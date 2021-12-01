@@ -1,5 +1,7 @@
 package com.company;
 
+import java.util.ArrayList;
+
 public class LancerJeu {
 
 
@@ -19,9 +21,17 @@ public class LancerJeu {
         switch (choixJouer) {
             case "1" -> {
                 System.out.println("Joueur contre machine");
-                Lettre.partieLettreUnJoueur();
-                Chrono.chrono(60);
-                //String motUtilisateur = SaisieUtilisateur.saisitMot();
+
+                ArrayList<String> tablettre = Lettre.partieLettreUnJoueur();
+
+                Chrono.chrono(10);
+
+                //tempsJoueur.tempsJoueurReponseLettre();
+
+                String motUtilisateur = SaisieUtilisateur.saisitMot();
+                ArrayList<String> listMots = RecupMots.extraireMots();
+
+                Verification.verificateurReponseMot(listMots,tablettre,motUtilisateur);
 
                /* long debut = System.currentTimeMillis();
                 long fin = System.currentTimeMillis();

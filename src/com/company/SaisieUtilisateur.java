@@ -1,4 +1,5 @@
 package com.company;
+import java.security.PublicKey;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -59,4 +60,11 @@ public class SaisieUtilisateur {
 
     }
 
+
+    public static String tentativeUtilisateur(){
+
+        String mot = Main.scan.nextLine();
+        return mot;
+
+    }
 }

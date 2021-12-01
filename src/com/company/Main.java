@@ -2,15 +2,24 @@ package com.company;
 import java.util.*;
 
 
+
+
 public class Main {
     public static Scanner scan = new Scanner(System.in);
 
     public static void main(String[] args) {
+
+
         System.out.println("""
                 ********************************
                 Bienvenue aux Chiffres & Lettres
                 ********************************
                 """);
+
+
+
+
+
 
         boolean jeuActif = true;
         while (jeuActif) {

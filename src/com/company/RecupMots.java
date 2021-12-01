@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 public class RecupMots {
 
-    public static void extraireMots(){
+    public static ArrayList<String> extraireMots(){
 
         ArrayList<String> listeMots = new ArrayList<>();
 
@@ -29,7 +29,7 @@ public class RecupMots {
             fr.close();
 
 
-            System.out.println(" Liste mots : " + listeMots);
+            //System.out.println(" Liste mots : " + listeMots);
 
         }
         catch(IOException e)
@@ -38,6 +38,7 @@ public class RecupMots {
         }
 
 
+        return listeMots;
 
     }
 
