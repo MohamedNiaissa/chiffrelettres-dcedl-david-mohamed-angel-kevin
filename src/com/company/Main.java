@@ -1,8 +1,38 @@
 package com.company;
+import java.util.*;
 
 public class Main {
+    public static Scanner scan = new Scanner(System.in);
 
     public static void main(String[] args) {
-	// write your code here
+        System.out.println("""
+                ********************************
+                Bienvenue aux Chiffres & Lettres
+                ********************************
+                """);
+        boolean jeuActif = true;
+        while (jeuActif) {
+            System.out.println("""
+                    ***************
+                    Menu Principal
+                    ***************
+                    Sélectionner une option:
+                    1) Jouer
+                    2) Quitter
+                    """);
+
+            switch (scan.nextInt()) {
+                case 1 :
+                    NombreJouer.jouerNombreJouer();
+                    break;
+                case 2 :
+                    System.out.println("Vous avez quitté le jeu");
+                    jeuActif = false;
+                    break;
+                default:
+                    System.err.println("Option non reconnue");
+                    break;
+            }
+        }
     }
 }
