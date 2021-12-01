@@ -12,12 +12,6 @@ public class Main {
                 ********************************
                 """);
 
-        // test recuperation mots
-        // RecupMots.extraireMots();
-
-        String lettre = saisieUtilisateur.saisieConsVoy();
-        System.out.println(lettre);
-
         boolean jeuActif = true;
         while (jeuActif) {
             System.out.println("""
@@ -33,7 +27,7 @@ public class Main {
             choixJouer = scan.nextLine();
             switch (choixJouer) {
 
-                case "1" -> NombreJouer.commencerJeu();
+                case "1" -> NombreJouer.jouerNombreJouer();
                 case "2" -> {
                     System.out.println("Vous avez quitté le jeu");
                     jeuActif = false;
