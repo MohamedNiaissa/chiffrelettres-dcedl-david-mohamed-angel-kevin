@@ -21,6 +21,7 @@ public class NombreJouer {
         }
         System.out.println();
     }
+
     public static void jouerNombreJouer() {
         System.out.println("""
                 *********************************
