@@ -10,6 +10,7 @@ public class Main {
                 Bienvenue aux Chiffres & Lettres
                 ********************************
                 """);
+
         boolean jeuActif = true;
         while (jeuActif) {
             System.out.println("""
