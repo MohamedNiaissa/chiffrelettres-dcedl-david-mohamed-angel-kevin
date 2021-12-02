@@ -39,12 +39,13 @@ public class Verification {
 
                         System.out.println("listedecoupermot= "+ listeDecouperMot.get(k));
                         System.out.println("listelettre= "+ tablettre.get(j));
+
                         if (listeDecouperMotString.get(k).equals(tablettre.get(j))){
                             System.out.println("Compare lettre hasard et lettre mot utilisateur ");
                             compteur++;
-                            System.out.println("incrément compteur");
+                            tablettre.remove(j);
+                            break;
 
-                            //tablettre.remove(j);
                         }
                     }
                 }

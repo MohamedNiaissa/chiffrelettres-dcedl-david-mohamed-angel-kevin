@@ -5,7 +5,10 @@ import java.util.*;
 public class tempsJoueur {
 
 
-    public static boolean tempsJoueurReponseLettre(){
+
+    public static String tempsJoueurReponseLettre(){
+        String valUtilistateur = "";
+
 
         try {
 
@@ -19,15 +22,17 @@ public class tempsJoueur {
         {
             public void run()
             {
+
                 String answer ="";
 
                 if( str.equals("") )
                 {
-                    System.out.println("Votre temps est écoulé, vous ne gagnez pas de point");
+                    System.out.println("\nVotre temps est écoulé, vous ne gagnez pas de point");
                     //System.exit( 0 );
 
                     bool[0] = false;
                     answer = "PasDeReponse";
+
 
                 }
             }
@@ -43,18 +48,25 @@ public class tempsJoueur {
           /*  Scanner sc = new Scanner(System.in);
             String in = sc.nextLine();
 */
-            SaisieUtilisateur.tentativeUtilisateur();
+            valUtilistateur = SaisieUtilisateur.saisitMot();
 
 
             timer.cancel();
+            System.out.println("mot de l'utilisateur: "+valUtilistateur);
+            return valUtilistateur;
         }
 
     }catch (Exception e){
             System.out.println("ok " + e);
         }
 
-        return true;
+
+
+
+        return "fin";
+
         }
+
 
 
 }
