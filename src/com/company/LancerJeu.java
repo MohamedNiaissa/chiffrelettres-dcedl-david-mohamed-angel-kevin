@@ -26,12 +26,11 @@ public class LancerJeu {
 
                 Chrono.chrono(10);
 
-                //tempsJoueur.tempsJoueurReponseLettre();
+                String reponseUtilisateur = tempsJoueur.tempsJoueurReponseLettre();
 
-                String motUtilisateur = SaisieUtilisateur.saisitMot();
                 ArrayList<String> listMots = RecupMots.extraireMots();
 
-                Verification.verificateurReponseMot(listMots,tablettre,motUtilisateur);
+                Verification.verificateurReponseMot(listMots,tablettre,reponseUtilisateur);
 
                /* long debut = System.currentTimeMillis();
                 long fin = System.currentTimeMillis();

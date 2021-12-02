@@ -61,10 +61,4 @@ public class SaisieUtilisateur {
     }
 
 
-    public static String tentativeUtilisateur(){
-
-        String mot = Main.scan.nextLine();
-        return mot;
-
-    }
 }
