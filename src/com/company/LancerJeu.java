@@ -20,11 +20,12 @@ public class LancerJeu {
             case "1" -> {
                 System.out.println("Joueur contre machine");
                 ArrayList<String> tablettre = Lettre.partieLettreUnJoueur();
-                Chrono.chrono(10);
+                Chrono.chrono(5);
                 String reponseUtilisateur = tempsJoueur.tempsJoueurReponseLettre();
                 ArrayList<String> listMots = RecupMots.extraireMots();
                 Verification.verificateurReponseMot(listMots,tablettre,reponseUtilisateur);
-                RechercheMotLong.motLong(listMots,tablettre);
+                System.out.println(RechercheMotLong.motLong(listMots,tablettre));
+
                /* long debut = System.currentTimeMillis();
                 long fin = System.currentTimeMillis();
                 if (fin-debut > 30000){
