@@ -45,14 +45,11 @@ public class tempsJoueur {
             Timer timer = new Timer();
             timer.schedule(task, 10000);
 
-          /*  Scanner sc = new Scanner(System.in);
-            String in = sc.nextLine();
-*/
+
             valUtilistateur = SaisieUtilisateur.saisitMot();
 
 
             timer.cancel();
-            System.out.println("mot de l'utilisateur: "+valUtilistateur);
             return valUtilistateur;
         }
 

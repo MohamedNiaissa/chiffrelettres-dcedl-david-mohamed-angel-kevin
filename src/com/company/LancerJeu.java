@@ -20,11 +20,22 @@ public class LancerJeu {
             case "1" -> {
                 System.out.println("Joueur contre machine");
                 ArrayList<String> tablettre = Lettre.partieLettreUnJoueur();
-                Chrono.chrono(5);
+                Chrono.chrono(10);
                 String reponseUtilisateur = tempsJoueur.tempsJoueurReponseLettre();
                 ArrayList<String> listMots = RecupMots.extraireMots();
-                Verification.verificateurReponseMot(listMots,tablettre,reponseUtilisateur);
+                Boolean verifValiditeReponse = Verification.verificateurReponseMot(listMots,tablettre,reponseUtilisateur);
                 String reponseMachine = RechercheMotLong.motLong(listMots,tablettre);
+
+                if (verifValiditeReponse){
+                    Verification.jouerGagnantMancheLettre(reponseUtilisateur,reponseMachine);
+
+                }else {
+                    System.out.println("L'IA a trouvé le mot " + reponseMachine);
+                    System.out.println("Votre réponse n'étant point valide l'IA gagne cette étape");
+                    System.out.println("L'IA a "+Verification.scoreJoueur2+" points.");
+
+                }
+
 
                /* long debut = System.currentTimeMillis();
                 long fin = System.currentTimeMillis();

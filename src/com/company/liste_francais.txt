@@ -2663,6 +2663,7 @@ bibliotheque
 bibliotheques
 biblique
 bic
+biche
 bicarbonate de sodium
 bicentenaire
 bicyclette
@@ -3693,7 +3694,7 @@ celibat
 celibataire
 celle
 celle ci
-celle là
+celle lï¿½
 celles
 cellier
 cellulaire
@@ -3701,7 +3702,7 @@ cellule
 cellules
 celui
 celui ci
-celui là
+celui lï¿½
 cendre
 cendre
 cendres
@@ -3791,7 +3792,7 @@ cet
 cette
 ceux
 ceux ci
-ceux là
+ceux lï¿½
 Cezanne
 chacun
 chacune
@@ -4310,7 +4311,7 @@ clavicule
 clavier
 claviers
 cle
-cle à molette
+cle ï¿½ molette
 cle anglaise
 clef
 clefs
@@ -5939,7 +5940,6 @@ davantage
 David
 Davis
 de
-de
 deale
 dealers
 Deauville
@@ -6005,7 +6005,7 @@ debute
 debute
 debuter
 debuts
-decà
+decï¿½
 decachete
 decacheter
 decade
@@ -6269,7 +6269,7 @@ deguiser
 deguises
 deguster
 dehors
-dejà
+dejï¿½
 dejeuner
 delai
 delais
@@ -7503,7 +7503,7 @@ durete
 durillon
 durs
 dus
-Düsseldorf
+Dï¿½sseldorf
 dut
 duvet
 dynamique
@@ -10391,7 +10391,7 @@ golfe
 gombo
 Gomez
 gomme
-gomme à macher
+gomme ï¿½ macher
 gomme arabique
 gommer
 Goncourt
@@ -10648,7 +10648,7 @@ guise
 guise de
 guitare
 guitariste
-Günther
+Gï¿½nther
 Gupta
 gus
 Gustave
@@ -12533,7 +12533,7 @@ Kurt
 kyste
 la
 La Valette
-là bas
+lï¿½ bas
 label
 labeur
 laboratoire
@@ -12635,7 +12635,7 @@ lancinant
 lancinante
 lanciner
 land
-länder
+lï¿½nder
 landes
 Lang
 langage
@@ -14404,7 +14404,7 @@ mugissement
 mule
 mules
 Mulhouse
-Müller
+Mï¿½ller
 multicolore
 multicolores
 multiforme
@@ -15301,7 +15301,7 @@ Ottawa
 Otto
 ottoman
 ou
-où
+oï¿½
 ouate
 oubli
 oubliant
