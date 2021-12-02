@@ -24,7 +24,7 @@ public class LancerJeu {
                 String reponseUtilisateur = tempsJoueur.tempsJoueurReponseLettre();
                 ArrayList<String> listMots = RecupMots.extraireMots();
                 Verification.verificateurReponseMot(listMots,tablettre,reponseUtilisateur);
-                System.out.println(RechercheMotLong.motLong(listMots,tablettre));
+                String reponseMachine = RechercheMotLong.motLong(listMots,tablettre);
 
                /* long debut = System.currentTimeMillis();
                 long fin = System.currentTimeMillis();

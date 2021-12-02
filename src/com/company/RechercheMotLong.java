@@ -84,7 +84,6 @@ public class RechercheMotLong {
 
         }
 
-        System.out.println("liste mot valide = " + motsValide);
 
         return motLePlusLong;
 
