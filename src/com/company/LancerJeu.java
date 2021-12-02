@@ -2,9 +2,11 @@ package com.company;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
+
+import static java.lang.Integer.parseInt;
 
 public class LancerJeu {
-
     public static String choixordi;
     public static void menuSelectionMode() {
         System.out.println("""
@@ -26,19 +28,21 @@ public class LancerJeu {
                 String name = Main.scan.nextLine();
                 for (int i = 0; i < 3; i++) {
                     SaisieUtilisateur.raffraichirRang();
-                    int[] listePlaque = new int[6];
-                    for (int j = 0; j < 6; j += 2) {
+                    List<Integer> listePlaque = new ArrayList<>();
+                    for (int j = 0; j < 3; j++) {
                         System.out.println("Dans quel rang piochez-vous, " + name + " ?");
                         String choix = Main.scan.next();
-                        listePlaque[j] = SaisieUtilisateur.saisieRang(choix);
+                        listePlaque.add(SaisieUtilisateur.saisieRang(choix));
                         choixordi = (int) (Math.random()*(3)+1)+"";
                         System.out.println("La machine à choisit le rang " + choixordi + ".");
-                        listePlaque[j+1] = SaisieUtilisateur.saisieRang(choixordi);
+                        listePlaque.add(SaisieUtilisateur.saisieRang(choixordi));
                     }
-                    System.out.println((int) (Math.random()*(999-101)+101));
-                    System.out.println(Arrays.toString(listePlaque));
-                    Chrono.chrono(60);
+                    String objectif = (int) (Math.random()*(999-101)+101)+"";
+                    System.out.println(objectif);
+                    System.out.println(listePlaque);
+                    Chrono.chrono(10);
                     tempsJoueur.tempsJoueurReponseLettre();
+                    RechercheCompte.toutOrdre(listePlaque,objectif);
 
                     ArrayList<String> tablettre = Lettre.partieLettreUnJoueur(name);
                     Chrono.chrono(60);
