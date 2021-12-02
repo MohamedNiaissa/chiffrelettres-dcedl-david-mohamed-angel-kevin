@@ -2,11 +2,11 @@ package com.company;
 import java.util.*;
 
 public class SaisieUtilisateur {
-    public static String saisieConsVoy(){
+    public static String saisieConsVoy(String name){
         String[] voyelles = {"a","e","i","o","u","y"};
         String[] consonnes = {"b","c","d","f","g","h","j","k","l","m","n","p","q","r","s","t","v","w","x","z"};
 
-        System.out.println("Voulez-vous une consonne ou une voyelle ? (c ou v) ");
+        System.out.println("Voulez-vous une consonne ou une voyelle, " + name + " ? (c ou v) ");
         String randomValeur ="";
 
         boolean valeurCorreect = true;
@@ -94,7 +94,7 @@ public class SaisieUtilisateur {
             case "2" ->{
                 if (Rang2.size()==0){
                     System.out.println("Il n'y a plus de plaque dans le rang 2");
-                    if (choix == NombreJouer.choixordi){
+                    if (choix == LancerJeu.choixordi){
                         choix = (int) (Math.random()*(3)+1)+"";
                         System.out.println("La machine à choisit le rang " + choix + ".");
                     } else {
@@ -112,7 +112,7 @@ public class SaisieUtilisateur {
             case "3" ->{
                 if (Rang3.size()==0){
                     System.out.println("Il n'y a plus de plaque dans le rang 3");
-                    if (choix == NombreJouer.choixordi){
+                    if (choix == LancerJeu.choixordi){
                         choix = (int) (Math.random()*(3)+1)+"";
                         System.out.println("La machine à choisit le rang " + choix + ".");
                     } else {
