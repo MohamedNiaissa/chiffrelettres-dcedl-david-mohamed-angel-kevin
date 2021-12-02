@@ -9,7 +9,6 @@ public class RechercheMotLong {
         int compteur = 0;
 
         ArrayList<String> motsValide = new ArrayList<>();
-
         ArrayList<Character> decoupeMot = new ArrayList<>();
         ArrayList<String> decoupeMotString = new ArrayList<>();
 

@@ -3,16 +3,14 @@ package com.company;
 import java.util.ArrayList;
 
 public class LancerJeu {
-
-
     public static void menuSelectionMode() {
         System.out.println("""
-                *********************************
-                Sélectionnez le nombre de joueurs
-                *********************************
+                ****************************
+                Menu selection de mode
+                ****************************
                 1) Joueur contre machine
                 2) Joueur 1 contre Joueur 2
-                ***********************
+                ****************************
                 3) Revenir au menu principal
                 """);
 
@@ -21,20 +19,12 @@ public class LancerJeu {
         switch (choixJouer) {
             case "1" -> {
                 System.out.println("Joueur contre machine");
-
                 ArrayList<String> tablettre = Lettre.partieLettreUnJoueur();
-
-
-                Chrono.chrono(5);
-
+                Chrono.chrono(10);
                 String reponseUtilisateur = tempsJoueur.tempsJoueurReponseLettre();
-
                 ArrayList<String> listMots = RecupMots.extraireMots();
-
                 Verification.verificateurReponseMot(listMots,tablettre,reponseUtilisateur);
-
                 RechercheMotLong.motLong(listMots,tablettre);
-
                /* long debut = System.currentTimeMillis();
                 long fin = System.currentTimeMillis();
                 if (fin-debut > 30000){
@@ -42,7 +32,13 @@ public class LancerJeu {
                 }
                 System.out.println("Résultat enregistré"); */
             }
-            case "2" -> System.out.println("Joueur 1 contre jouer 2");
+            case "2" -> {
+                System.out.println("Joueur 1 contre jouer 2");
+                ArrayList<String> tablettre = Lettre.partieDeuxJoueurs();
+
+
+            }
+
             case "3" -> {
             }
             default -> {
