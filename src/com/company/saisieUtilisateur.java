@@ -1,7 +1,7 @@
 package com.company;
 import java.util.*;
 
-public class SaisieUtilisateur {
+class SaisieUtilisateur {
     public static String saisieConsVoy(String name){
         String[] voyelles = {"a","e","i","o","u","y"};
         String[] consonnes = {"b","c","d","f","g","h","j","k","l","m","n","p","q","r","s","t","v","w","x","z"};
@@ -30,13 +30,12 @@ public class SaisieUtilisateur {
 
     public static String saisieConsVoyRobot(){
         String[] voyelles = {"a","e","i","o","u","y"};
+        String voyellesverif = "aeiouy";
         String[] consonnes = {"b","c","d","f","g","h","j","k","l","m","n","p","q","r","s","t","v","w","x","z"};
 
         ArrayList<String[]> listeVoyelleConsonne = new ArrayList<>();
         listeVoyelleConsonne.add(voyelles);
         listeVoyelleConsonne.add(consonnes);
-
-
 
 
         int randTab = new Random().nextInt(listeVoyelleConsonne.size());
@@ -45,7 +44,11 @@ public class SaisieUtilisateur {
         int randTabHasard = new Random().nextInt(listeVoyelleConsonne.size());
         String lettreTabHasard = tabHasard[randTabHasard];
 
-
+        if (voyellesverif.contains(lettreTabHasard)){
+            System.out.println("La machine choisit une voyelle.");
+        } else {
+            System.out.println("La machine choisit une consonne.");
+        }
 
         return lettreTabHasard;
     }

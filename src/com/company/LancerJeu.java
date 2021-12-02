@@ -35,7 +35,7 @@ public class LancerJeu {
                         System.out.println("La machine à choisit le rang " + choixordi + ".");
                         listePlaque[j+1] = SaisieUtilisateur.saisieRang(choixordi);
                     }
-                    System.out.println((int) (Math.random()*(999)+101));
+                    System.out.println((int) (Math.random()*(999-101)+101));
                     System.out.println(Arrays.toString(listePlaque));
                     Chrono.chrono(60);
                     tempsJoueur.tempsJoueurReponseLettre();
@@ -73,7 +73,7 @@ public class LancerJeu {
                         String choix2 = Main.scan.next();
                         listePlaque[j + 1] = SaisieUtilisateur.saisieRang(choix2);
                     }
-                    System.out.println((int) (Math.random() * (999) + 101));
+                    System.out.println((int) (Math.random() * (999-101) + 101));
                     System.out.println(Arrays.toString(listePlaque));
                     Chrono.chrono(60);
                     System.out.println("Votre réponse " + name1 + " :");
