@@ -37,11 +37,8 @@ public class Verification {
                     for (int j = 0; j < tablettre.size(); j++) {
                         //System.out.println("avant condition");
 
-                        System.out.println("listedecoupermot= "+ listeDecouperMot.get(k));
-                        System.out.println("listelettre= "+ tablettre.get(j));
 
                         if (listeDecouperMotString.get(k).equals(tablettre.get(j))){
-                            System.out.println("Compare lettre hasard et lettre mot utilisateur ");
                             compteur++;
                             tablettre.remove(j);
                             break;

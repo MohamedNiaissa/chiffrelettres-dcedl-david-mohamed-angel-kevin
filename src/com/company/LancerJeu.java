@@ -24,7 +24,8 @@ public class LancerJeu {
 
                 ArrayList<String> tablettre = Lettre.partieLettreUnJoueur();
 
-                Chrono.chrono(10);
+
+                Chrono.chrono(5);
 
                 String reponseUtilisateur = tempsJoueur.tempsJoueurReponseLettre();
 
