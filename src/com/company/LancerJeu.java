@@ -3,9 +3,12 @@ package com.company;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+//import static com.company.Resultat.c;
+
 public class LancerJeu {
 
     public static String choixordi;
+    public static int[] listePlaque = new int[6];
     public static void menuSelectionMode() {
         System.out.println("""
                 *********************************
@@ -26,7 +29,7 @@ public class LancerJeu {
                 String name = Main.scan.nextLine();
                 for (int i = 0; i < 3; i++) {
                     SaisieUtilisateur.raffraichirRang();
-                    int[] listePlaque = new int[6];
+//                    int[] listePlaque = new int[6];
                     for (int j = 0; j < 6; j += 2) {
                         System.out.println("Dans quel rang piochez-vous, " + name + " ?");
                         String choix = Main.scan.next();
@@ -37,6 +40,7 @@ public class LancerJeu {
                     }
                     System.out.println((int) (Math.random()*(999-101)+101));
                     System.out.println(Arrays.toString(listePlaque));
+                    Resultat.exactPlaque(String.valueOf(listePlaque));
                     Chrono.chrono(60);
                     tempsJoueur.tempsJoueurReponseLettre();
 
@@ -84,6 +88,7 @@ public class LancerJeu {
                     ArrayList<String> tablettre = Lettre.partieLettreDeuxJoueur(name1, name2);
                     Chrono.chrono(60);
                     tempsJoueur.tempsJoueurReponseLettre();
+                    Resultat.exactPlaque(choixJouer);
                     String motUtilisateur = SaisieUtilisateur.saisitMot();
                     ArrayList<String> listMots = RecupMots.extraireMots();
                     Verification.verificateurReponseMot(listMots,tablettre,motUtilisateur);
