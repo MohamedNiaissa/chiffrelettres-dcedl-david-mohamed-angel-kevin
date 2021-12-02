@@ -56,8 +56,13 @@ public class saisieUtilisateur {
             case "2" ->{
                 if (Rang2.size()==0){
                     System.out.println("Il n'y a plus de plaque dans le rang 2");
-                    System.out.println("Dans quel rang piochez-vous ?");
-                    choix = Main.scan.next();
+                    if (choix == NombreJouer.choixordi){
+                        choix = (int) (Math.random()*(3)+1)+"";
+                        System.out.println("La machine à choisit le rang " + choix + ".");
+                    } else {
+                        System.out.println("Dans quel rang piochez-vous ?");
+                        choix = Main.scan.next();
+                    }
                     int randomPlaque = saisieRang(choix);
                     return randomPlaque;
                 }
@@ -69,8 +74,13 @@ public class saisieUtilisateur {
             case "3" ->{
                 if (Rang3.size()==0){
                     System.out.println("Il n'y a plus de plaque dans le rang 3");
-                    System.out.println("Dans quel rang piochez-vous ?");
-                    choix = Main.scan.next();
+                    if (choix == NombreJouer.choixordi){
+                        choix = (int) (Math.random()*(3)+1)+"";
+                        System.out.println("La machine à choisit le rang " + choix + ".");
+                    } else {
+                        System.out.println("Dans quel rang piochez-vous ?");
+                        choix = Main.scan.next();
+                    }
                     int randomPlaque = saisieRang(choix);
                     return randomPlaque;
                 }

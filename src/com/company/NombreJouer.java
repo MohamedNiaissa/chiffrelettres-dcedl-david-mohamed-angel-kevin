@@ -3,6 +3,7 @@ package com.company;
 import java.util.Arrays;
 
 public class NombreJouer {
+    public static String choixordi;
     public static void chrono(int seconde){
         int temps = seconde;
         System.out.println(0 + "...|...10....|...20....|...30....|...40....|...50....|..." + temps);
@@ -45,11 +46,13 @@ public class NombreJouer {
                 for (int i = 0; i < 3; i++) {
                 saisieUtilisateur.raffraichirRang();
                 int[] listePlaque = new int[6];
-                for (int j = 0; j < 3; j++) {
+                for (int j = 0; j < 6; j += 2) {
                     System.out.println("Dans quel rang piochez-vous, " + name + " ?");
                     String choix = Main.scan.next();
                     listePlaque[j] = saisieUtilisateur.saisieRang(choix);
-                    System.out.println("La machine à choisit le rang blabla");
+                    choixordi = (int) (Math.random()*(3)+1)+"";
+                    System.out.println("La machine à choisit le rang " + choixordi + ".");
+                    listePlaque[j+1] = saisieUtilisateur.saisieRang(choixordi);
                 }
                 System.out.println((int) (Math.random()*(999)+101));
                 System.out.println(Arrays.toString(listePlaque));
@@ -72,13 +75,13 @@ public class NombreJouer {
                 for (int i = 0; i < 3; i++) {
                     saisieUtilisateur.raffraichirRang();
                     int[] listePlaque = new int[6];
-                    for (int j = 0; j < 3; j++) {
+                    for (int j = 0; j < 6; j += 2) {
                         System.out.println("Dans quel rang piochez-vous, " + name1 + " ?");
                         String choix1 = Main.scan.next();
                         listePlaque[j] = saisieUtilisateur.saisieRang(choix1);
                         System.out.println("Dans quel rang piochez-vous, " + name2 + " ?");
                         String choix2 = Main.scan.next();
-                        listePlaque[j] = saisieUtilisateur.saisieRang(choix2);
+                        listePlaque[j+1] = saisieUtilisateur.saisieRang(choix2);
                     }
                     System.out.println((int) (Math.random()*(999)+101));
                     System.out.println(Arrays.toString(listePlaque));
