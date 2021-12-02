@@ -9,9 +9,10 @@ public class RechercheCompte{
     static int[] operation = new int[5];
     static List<Integer> list = new ArrayList<>();
     static String ope;
+    static int plusprestrouve = 1000;
     static List<String> opeccorrect = new ArrayList<>();
     static String objectif = 0+"";
-    static String pluspres = 0+"";
+    static String pluspres = 1000+"";
     static String valeur = 0+"";
     public static void verification(){
         ope = list.get(0) + "";
@@ -25,6 +26,9 @@ public class RechercheCompte{
                     break;
                 }
             } else if (operation[i]==2) {
+                if (parseInt(valeur)-list.get(i)<0){
+                    break;
+                }
                 valeur = parseInt(valeur)-list.get(i)+"";
                 ope += "-" +list.get(i);
                 if (valeur.equals(objectif)){
@@ -39,6 +43,9 @@ public class RechercheCompte{
                     break;
                 }
             } else {
+                if (parseInt(valeur)%list.get(i)!=0){
+                    break;
+                }
                 valeur = parseInt(valeur)/list.get(i)+"";
                 ope += "/" +list.get(i);
                 if (valeur.equals(objectif)){
@@ -53,6 +60,7 @@ public class RechercheCompte{
         }
         if (plusProcheTrouve < parseInt(pluspres)){
             pluspres = plusProcheTrouve + "";
+            plusprestrouve = parseInt(objectif) - parseInt(valeur);
         }
     }
     public static void touteOperation(){
@@ -86,21 +94,27 @@ public class RechercheCompte{
         for (int i = 1; i <= 6; i++) {
             list.add(i);
         }
-        for (int i = 0; i < 6; i++) {
-            for (int j = 0; j < 5; j++) {
-                for (int h = 0; h < 6; h++) {
-                    int stock = list.get(0);
-                    for (int k = 0; k < 5; k++) {
-                        list.set(k, list.get(k+1));
-                    }
-                    list.set(5,stock);
-                    touteOperation();
+        for (int j = 0; j < 5; j++) {
+            for (int h = 0; h < 6; h++) {
+                int stock = list.get(0);
+                for (int k = 0; k < 5; k++) {
+                    list.set(k, list.get(k+1));
                 }
-                int stock = list.get(j);
-                list.set(j, list.get(j+1));
-                list.set(j+1,stock);
+                list.set(5,stock);
+                touteOperation();
             }
+            int stock = list.get(j);
+            list.set(j, list.get(j+1));
+            list.set(j+1,stock);
         }
-        System.out.println(opeccorrect);
+
+        if (parseInt(pluspres) == 0){
+            System.out.println("On pouvait atteindre le résultat comme ceux-ci " + opeccorrect);
+        } else {
+            System.out.println("La plus proche valeur différait de " + plusprestrouve);
+            System.out.println(parseInt(objectif)-plusprestrouve);
+            toutOrdre(list,(parseInt(objectif)-plusprestrouve)+"");
+
+        }
     }
 }
