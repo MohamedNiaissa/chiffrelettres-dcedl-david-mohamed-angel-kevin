@@ -1,7 +1,7 @@
 package com.company;
 import java.util.*;
 
-public class saisieUtilisateur {
+public class SaisieUtilisateur {
     public static String saisieConsVoy(){
         String[] voyelles = {"a","e","i","o","u","y"};
         String[] consonnes = {"b","c","d","f","g","h","j","k","l","m","n","p","q","r","s","t","v","w","x","z"};
@@ -26,6 +26,44 @@ public class saisieUtilisateur {
             }
         }
         return randomValeur;
+    }
+
+    public static String saisieConsVoyRobot(){
+        String[] voyelles = {"a","e","i","o","u","y"};
+        String[] consonnes = {"b","c","d","f","g","h","j","k","l","m","n","p","q","r","s","t","v","w","x","z"};
+
+        ArrayList<String[]> listeVoyelleConsonne = new ArrayList<>();
+        listeVoyelleConsonne.add(voyelles);
+        listeVoyelleConsonne.add(consonnes);
+
+
+
+
+        int randTab = new Random().nextInt(listeVoyelleConsonne.size());
+        String[] tabHasard = listeVoyelleConsonne.get(randTab);
+
+        int randTabHasard = new Random().nextInt(listeVoyelleConsonne.size());
+        String lettreTabHasard = tabHasard[randTabHasard];
+
+
+
+        return lettreTabHasard;
+    }
+
+    public static String saisitMot(){
+
+        String motUtilisateur = Main.scan.nextLine();
+
+        return  motUtilisateur;
+
+    }
+
+
+    public static String tentativeUtilisateur(){
+
+        String mot = Main.scan.nextLine();
+        return mot;
+
     }
     static List<Integer> Rang1 = new ArrayList<>();
     static List<Integer> Rang2 = new ArrayList<>();

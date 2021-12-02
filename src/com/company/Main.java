@@ -2,15 +2,24 @@ package com.company;
 import java.util.*;
 
 
+
+
 public class Main {
     public static Scanner scan = new Scanner(System.in);
 
     public static void main(String[] args) {
+
+
         System.out.println("""
                 ********************************
                 Bienvenue aux Chiffres & Lettres
                 ********************************
                 """);
+
+
+
+
+
 
         boolean jeuActif = true;
         while (jeuActif) {
@@ -27,7 +36,7 @@ public class Main {
             choixJouer = scan.nextLine();
             switch (choixJouer) {
 
-                case "1" -> NombreJouer.jouerNombreJouer();
+                case "1" -> LancerJeu.menuSelectionMode();
                 case "2" -> {
                     System.out.println("Vous avez quitté le jeu");
                     jeuActif = false;
