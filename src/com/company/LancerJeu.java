@@ -32,6 +32,8 @@ public class LancerJeu {
 
                 Verification.verificateurReponseMot(listMots,tablettre,reponseUtilisateur);
 
+                RechercheMotLong.motLong(listMots,tablettre);
+
                /* long debut = System.currentTimeMillis();
                 long fin = System.currentTimeMillis();
                 if (fin-debut > 30000){
