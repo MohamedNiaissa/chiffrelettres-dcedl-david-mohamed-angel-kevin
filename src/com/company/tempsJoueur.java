@@ -28,7 +28,6 @@ public class tempsJoueur {
                 if( str.equals("") )
                 {
                     System.out.println("\nVotre temps est écoulé, vous ne gagnez pas de point");
-                    //System.exit( 0 );
 
                     bool[0] = false;
                     answer = "PasDeReponse";
