@@ -26,6 +26,7 @@ public class LancerJeu {
                 System.out.println("Joueur contre machine");
                 System.out.println("Entrez votre nom :");
                 String name = Main.scan.nextLine();
+                // Chiffres
                 for (int i = 0; i < 3; i++) {
                     SaisieUtilisateur.raffraichirRang();
                     List<Integer> listePlaque = new ArrayList<>();
@@ -44,6 +45,7 @@ public class LancerJeu {
                     tempsJoueur.tempsJoueurReponseLettre();
                     RechercheCompte.toutOrdre(listePlaque,objectif);
 
+                    // Lettres
                     ArrayList<String> tablettre = Lettre.partieLettreUnJoueur(name);
                     Chrono.chrono(60);
                     tempsJoueur.tempsJoueurReponseLettre();

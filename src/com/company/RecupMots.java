@@ -29,7 +29,7 @@ public class RecupMots {
             fr.close();
 
 
-            //System.out.println(" Liste mots : " + listeMots);
+            System.out.println(" Liste mots : " + listeMots);
 
         }
         catch(IOException e)
@@ -39,7 +39,6 @@ public class RecupMots {
 
 
         return listeMots;
-
     }
 
 
