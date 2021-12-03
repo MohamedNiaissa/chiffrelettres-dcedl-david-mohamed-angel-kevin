@@ -1,8 +1,20 @@
 package com.company;
 import java.util.*;
 
+/**
+ * Type Saisie utilisateur.
+ */
 class SaisieUtilisateur {
-    public static String saisieConsVoy(String name){
+    /**
+     * Saisie consonne et voyelle en string.
+     *
+     * @param name le name
+     * @return un string
+     */
+    public static String SaisieConsVoy(String name){
+        /**
+         *
+         */
         String[] voyelles = {"a","e","i","o","u","y"};
         String[] consonnes = {"b","c","d","f","g","h","j","k","l","m","n","p","q","r","s","t","v","w","x","z"};
 
@@ -28,6 +40,11 @@ class SaisieUtilisateur {
         return randomValeur;
     }
 
+    /**
+     * Saisie cons voy robot string.
+     *
+     * @return the string
+     */
     public static String saisieConsVoyRobot(){
         String[] voyelles = {"a","e","i","o","u","y"};
         String voyellesverif = "aeiouy";
@@ -53,6 +70,11 @@ class SaisieUtilisateur {
         return lettreTabHasard;
     }
 
+    /**
+     * Saisit mot string.
+     *
+     * @return un string
+     */
     public static String saisitMot(){
         String motUtilisateur = Main.scan.nextLine();
 
@@ -65,6 +87,12 @@ class SaisieUtilisateur {
     return  chiffreUtilisateur;
     }
 
+
+    /**
+     * Tentative utilisateur string.
+     *
+     * @return un string
+     */
     public static String tentativeUtilisateur(){
 
         String mot = Main.scan.nextLine();
@@ -72,10 +100,22 @@ class SaisieUtilisateur {
 
     }
 
+    /**
+     * The Rang 1.
+     */
     static List<Integer> Rang1 = new ArrayList<>();
+    /**
+     * The Rang 2.
+     */
     static List<Integer> Rang2 = new ArrayList<>();
+    /**
+     * The Rang 3.
+     */
     static List<Integer> Rang3 = new ArrayList<>();
 
+    /**
+     * Raffraichir rang.
+     */
     public static void raffraichirRang(){
         for (int i = 0; i < 2; i++) {
             for (int j = 1; j <= 10; j++) {
@@ -91,6 +131,13 @@ class SaisieUtilisateur {
         Rang3.add(100);
         Rang3.add(100);
     }
+
+    /**
+     * Saisie rang int.
+     *
+     * @param choix un choix
+     * @return un int
+     */
     public static int saisieRang(String choix){
         switch (choix){
             case "1" ->{

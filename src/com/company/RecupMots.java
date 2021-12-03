@@ -5,8 +5,21 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
+/**
+ * Type Recup mots.
+ */
 public class RecupMots {
+
+    /**
+     * Extraire mots array list.
+     *
+     * @return array list
+     */
     public static ArrayList<String> extraireMots(){
+        /**
+         * Récupère e
+         */
+
         ArrayList<String> listeMots = new ArrayList<>();
 
         try {

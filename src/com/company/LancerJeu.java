@@ -3,12 +3,26 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * Type Lancer jeu.
+ */
 import static java.lang.Integer.parseInt;
 
 public class LancerJeu {
     static String name = "";
     public static String choixordi;
+
+    /**
+     * Sélection mode menu.
+     */
     public static void menuSelectionMode() {
+        /**
+         * Affiche le menu qui contient le mode jeu :
+         * 1. Joueur contre machine
+         * 2. Joueur 1 contre Joueur 2
+         * 3. Revenir au menu principal
+         */
+
         System.out.println("""
                 ***********************************************************
                 ****************** Menu selection de mode *****************

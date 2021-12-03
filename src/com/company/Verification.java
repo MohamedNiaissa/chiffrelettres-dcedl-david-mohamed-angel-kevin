@@ -2,13 +2,26 @@ package com.company;
 import java.util.ArrayList;
 import java.util.List;
 
-import static java.lang.Integer.parseInt;
-
+/**
+ * Type Verification.
+ */
 public class Verification {
     static int scoreJoueur1 = 0;
     static int scoreJoueur2 = 0;
 
-    public static boolean verificateurReponseMot(ArrayList<String> tab,ArrayList<String> tablettre ,String mot) {
+    /**
+     * Verificateur réponse mot boolean.
+     *
+     * @param tab       un tab
+     * @param tablettre un tablettre
+     * @param mot       un mot
+     * @return un boolean
+     */
+    public static boolean verificateurReponseMot(ArrayList<String> tab,ArrayList<String> tablettre ,String mot){
+        /**
+         *
+         */
+
         ArrayList<Character> listeDecouperMot = new ArrayList<>();
         ArrayList<String> listeDecouperMotString = new ArrayList<>();
         int compteur = 0;

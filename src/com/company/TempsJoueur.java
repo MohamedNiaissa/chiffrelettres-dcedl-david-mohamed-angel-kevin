@@ -1,8 +1,20 @@
 package com.company;
 import java.util.*;
 
-public class TempsJoueur {
-    public static String tempsJoueurReponseLettre() {
+/**
+ * Type Temps joueur.
+ */
+public class tempsJoueur {
+
+    /**
+     * Temps joueur reponse lettre string.
+     *
+     * @return un string
+     */
+    public static String tempsJoueurReponseLettre(){
+        /**
+         *
+         */
         String valUtilistateur = "";
 
         try {
@@ -25,8 +37,8 @@ public class TempsJoueur {
         while (bool[0]) {
             Timer timer = new Timer();
             timer.schedule(task, 10000);
-            valUtilistateur = SaisieUtilisateur.saisitMot();
 
+            valUtilistateur = SaisieUtilisateur.saisitMot();
             timer.cancel();
             System.out.println("Vous avez saisie : " + valUtilistateur);
             return valUtilistateur;
