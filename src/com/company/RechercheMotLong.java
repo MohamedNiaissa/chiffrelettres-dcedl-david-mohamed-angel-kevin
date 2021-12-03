@@ -2,14 +2,19 @@ package com.company;
 import java.util.ArrayList;
 
 public class RechercheMotLong {
+
     public static String motLong(ArrayList<String> tabMots,ArrayList<String> tabLettres) {
         int compteur = 0;
         ArrayList<String> motsValide = new ArrayList<>();
         ArrayList<Character> decoupeMot = new ArrayList<>();
         ArrayList<String> decoupeMotString = new ArrayList<>();
 
+
+
+
         for (int i = 0; i <tabMots.size() ; i++) {
             ArrayList<String> tabLettresclone = new ArrayList<>();
+
             for (int k = 0; k < tabMots.get(i).length(); k++) {
                 decoupeMot.add(tabMots.get(i).toLowerCase().charAt(k));
             }

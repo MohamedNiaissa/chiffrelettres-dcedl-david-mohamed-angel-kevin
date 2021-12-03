@@ -60,6 +60,7 @@ public class Verification {
             return scoreJoueur2+= motUtilisateur2.length();
         } else if (motUtilisateur2.length() < motUtilisateur1.length()){
             System.out.println("Vous gagnez avec le mot " + motUtilisateur1);
+            System.out.println("L'IA a trouve le mot " + motUtilisateur2);
             return scoreJoueur1+= motUtilisateur1.length();
         } else {
             System.out.println("Joueur et IA sont à égalité");
