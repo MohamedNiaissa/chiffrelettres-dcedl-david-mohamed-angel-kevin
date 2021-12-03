@@ -159,7 +159,7 @@ public class LancerJeu {
                         System.out.println("Dans quel rang piochez-vous, " + name1 + " ?");
                         String choix1 = Main.scan.next();
 
-                        while (choix1 != "1" && choix1 != "2" && choix1 != "3"){
+                        while (!(choix1.equals("1") || choix1.equals("2") || choix1.equals("3"))){
                             System.out.println("Vous ne pouvez choisir que le rang 1, 2 ou 3.");
                             choix1 = Main.scan.next();
                         }
@@ -168,7 +168,7 @@ public class LancerJeu {
                         System.out.println("Dans quel rang piochez-vous, " + name2 + " ?");
                         String choix2 = Main.scan.next();
 
-                        while (choix2 != "1" && choix2 != "2" && choix2 != "3"){
+                        while (!(choix2.equals("1") || choix2.equals("2") || choix2.equals("3"))){
                             System.out.println("Vous ne pouvez choisir que le rang 1, 2 ou 3.");
                             choix2 = Main.scan.next();
                         }
@@ -204,10 +204,10 @@ public class LancerJeu {
                     if (verifValiditeReponse1 && verifValiditeReponse2) {
                         if (reponseUtilisateur1.length() > reponseUtilisateur2.length()) {
                             System.out.println("Joueur 1 possède le mot le plus long : " + reponseUtilisateur1);
-                            Verification.scoreJoueur1++;
+                            Verification.scoreJoueur1+= reponseUtilisateur1.length();
                         } else if (reponseUtilisateur1.length() < reponseUtilisateur2.length()){
                             System.out.println("Joueur 2 possède le mot le plus long : " + reponseUtilisateur2);
-                            Verification.scoreJoueur2++;
+                            Verification.scoreJoueur2+= reponseUtilisateur2.length();
                         } else {
                             if (reponseUtilisateur1=="" && reponseUtilisateur2=="") {
                                 System.out.println("Joueur 1 et Joueur 2 n'ont entré aucune réponse");
@@ -220,10 +220,10 @@ public class LancerJeu {
                         System.out.println("Vous avez tous les deux entré des mots inexistans");
                     } else if (verifValiditeReponse1 && verifValiditeReponse2 == false) {
                         System.out.println("Jouer2 a rentré un mot inexistant,donc Joueur1 remporte cette étape.");
-                        Verification.scoreJoueur1++;
+                        Verification.scoreJoueur1+= reponseUtilisateur1.length();
                     } else {
                         System.out.println("Jouer1 a rentré un mot inexistant,donc Joueur2 remporte cette étape.");
-                        Verification.scoreJoueur2++;
+                        Verification.scoreJoueur2+= reponseUtilisateur2.length();
                     }
                 }
             }

@@ -4,8 +4,10 @@ import java.util.*;
 /**
  * Type Temps joueur.
  */
-public class tempsJoueur {
+public class TempsJoueur {
 
+
+    static boolean valUtiliChiffre = false;
     /**
      * Temps joueur reponse lettre string.
      *
@@ -45,7 +47,6 @@ public class tempsJoueur {
         }
 
         } catch (Exception e) {
-                System.out.println("ok " + e);
         }
 
         return "fin";
@@ -64,9 +65,11 @@ public class tempsJoueur {
 
                     if ( str.equals("")) {
                         System.out.println("\nVotre temps est écoulé, vous ne gagnez pas de point");
+                        System.out.println("Veuillez entrez une valeur pour continuer");
                         //System.exit( 0 );
                         bool[0] = false;
                         answer = "PasDeReponse";
+
                     }
                 }
             };

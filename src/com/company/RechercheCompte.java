@@ -9,6 +9,7 @@ import static java.lang.Integer.parseInt;
  * Type Recherche compte.
  */
 public class RechercheCompte{
+    static int scoreMachine = 0;
     static int[] operation = new int[5];
     static List<Integer> list = new ArrayList<>();
     static String ope;

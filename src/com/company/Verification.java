@@ -8,6 +8,7 @@ import java.util.List;
 public class Verification {
     static int scoreJoueur1 = 0;
     static int scoreJoueur2 = 0;
+    static int resultat = 0;
 
     /**
      * Verificateur réponse mot boolean.
@@ -65,10 +66,10 @@ public class Verification {
     public static int jouerGagnantMancheLettre(String motUtilisateur1, String motUtilisateur2){
         if (motUtilisateur2.length() > motUtilisateur1.length()){
             System.out.println("L'IA gagne avec le mot " + motUtilisateur2);
-            return scoreJoueur2++;
+            return scoreJoueur2+= motUtilisateur2.length();
         } else if (motUtilisateur2.length() < motUtilisateur1.length()){
             System.out.println("Vous gagnez avec le mot " + motUtilisateur1);
-            return scoreJoueur1++;
+            return scoreJoueur1+= motUtilisateur1.length();
         } else {
             System.out.println("Joueur et IA sont à égalité");
             return 0;
@@ -98,7 +99,10 @@ public class Verification {
                 verif.add(Character.toString(proposition.charAt(i)));
             }
         }
-        int resultat = Integer.parseInt((verif.get(0)));
+        if (verif.size()==0){
+            return false;
+        }
+        resultat = Integer.parseInt((verif.get(0)));
         int selection = 1;
         for (int i = 1; i < proposition.length(); i++) {
             if (Character.toString(proposition.charAt(i)).equals("+")){

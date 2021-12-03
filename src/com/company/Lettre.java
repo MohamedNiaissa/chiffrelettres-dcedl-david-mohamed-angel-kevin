@@ -8,7 +8,6 @@ public class Lettre {
 
     /**
      * Partie lettre un joueur array list.
-     * @param name un name
      * @return array list
      */
     public static ArrayList<String> partieLettreUnJoueur() {
@@ -27,7 +26,7 @@ public class Lettre {
                 """);
 
         for (int i = 1; i <= 5 ; i++) {
-            String lettreUtilisateur = SaisieUtilisateur.saisieConsVoy(LancerJeu.name);
+            String lettreUtilisateur = SaisieUtilisateur.SaisieConsVoy(LancerJeu.name);
             lettreChoisis.add(lettreUtilisateur);
             System.out.println("Lettres générées : " + lettreChoisis);
         }
@@ -64,14 +63,14 @@ public class Lettre {
                 """);
 
         for (int i = 1; i <= 5 ; i++) {
-            String lettreUtilisateur = SaisieUtilisateur.saisieConsVoy(LancerJeu.name);
+            String lettreUtilisateur = SaisieUtilisateur.SaisieConsVoy(LancerJeu.name);
             lettreChoisis2.add(lettreUtilisateur);
             System.out.println("Lettres générées : " + lettreChoisis2);
         }
 
         System.out.println("\nLancement de la saisie Joueur 2...\n");
         for (int i = 1; i <= 5 ; i++) {
-            String lettreUtilisateur = SaisieUtilisateur.saisieConsVoy(LancerJeu.name);
+            String lettreUtilisateur = SaisieUtilisateur.SaisieConsVoy(LancerJeu.name);
             lettreChoisis2.add(lettreUtilisateur);
             System.out.println("Lettres générées : " + lettreChoisis2);
         }
