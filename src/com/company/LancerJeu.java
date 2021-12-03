@@ -91,7 +91,7 @@ public class LancerJeu {
                     }
 
                     String objectif = (int) (Math.random()*(999-101)+101)+"";
-                    System.out.println("\nLe chiffre que vous devez attendre avec vos calculs est : " + (int) (Math.random() * (999-101) + 101));
+                    System.out.println("\nLe chiffre que vous devez attendre avec vos calculs est : " + objectif);
                     System.out.println("\nLes chiffes dont vous disposez pour effectuer ce calcule sont : ");
                     System.out.println(listePlaque);
                     System.out.println("\nVous avez 60 secondes pour réflechir!");
