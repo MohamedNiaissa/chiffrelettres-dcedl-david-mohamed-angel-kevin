@@ -21,7 +21,7 @@ public class Lettre {
                 """);
 
         for (int i = 1; i <= 5 ; i++) {
-            String lettreUtilisateur = SaisieUtilisateur.saisieConsVoy();
+            String lettreUtilisateur = SaisieUtilisateur.saisieConsVoy(LancerJeu.name);
             lettreChoisis.add(lettreUtilisateur);
             System.out.println("Lettres générées : " + lettreChoisis);
         }
@@ -35,7 +35,7 @@ public class Lettre {
         return lettreChoisis;
     }
 
-    public static ArrayList<String> partieDeuxJoueurs() {
+    public static ArrayList<String> partieLettreDeuxJoueur(String name1, String name2) {
         ArrayList<String> lettreChoisis2 = new ArrayList<>();
 
         System.out.println("""
@@ -56,14 +56,14 @@ public class Lettre {
 
         System.out.println("\nLancement de la saisie Joueur 1...\n");
         for (int i = 1; i <= 5 ; i++) {
-            String lettreUtilisateur = SaisieUtilisateur.saisieConsVoy();
+            String lettreUtilisateur = SaisieUtilisateur.saisieConsVoy(LancerJeu.name);
             lettreChoisis2.add(lettreUtilisateur);
             System.out.println("Lettres générées : " + lettreChoisis2);
         }
 
         System.out.println("\nLancement de la saisie Joueur 2...\n");
         for (int i = 1; i <= 5 ; i++) {
-            String lettreUtilisateur = SaisieUtilisateur.saisieConsVoy();
+            String lettreUtilisateur = SaisieUtilisateur.saisieConsVoy(LancerJeu.name);
             lettreChoisis2.add(lettreUtilisateur);
             System.out.println("Lettres générées : " + lettreChoisis2);
         }
