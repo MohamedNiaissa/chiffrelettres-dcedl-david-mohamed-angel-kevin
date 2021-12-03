@@ -1,10 +1,8 @@
 package com.company;
-
 /**
  * Type Chrono.
  */
 public class Chrono {
-
     /**
      * Chrono.
      * @param seconde une seconde

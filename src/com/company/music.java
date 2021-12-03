@@ -10,18 +10,13 @@ import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.SourceDataLine;
 import javax.sound.sampled.UnsupportedAudioFileException;
 
-
-
     public class music {
-
         /**
          * Jouer un son au format wav
          * @author ???
          * Source sur le web
          */
         public static class AePlayWave extends Thread {
-
-
             private String filename;
             private Position curPosition;
             private final int EXTERNAL_BUFFER_SIZE = 524288; // 128Kb
@@ -93,10 +88,5 @@ import javax.sound.sampled.UnsupportedAudioFileException;
                     auline.close();
                 }
             }
-
-
-
         }
     }
-
-

@@ -16,17 +16,12 @@ public class LancerJeu {
      * Sélection mode menu.
      */
     public static void menuSelectionMode() {
-
-
-
         /**
          * Affiche le menu qui contient le mode jeu :
          * 1. Joueur contre machine
          * 2. Joueur 1 contre Joueur 2
          * 3. Revenir au menu principal
          */
-
-
         System.out.println("""
                 ***********************************************************
                 ****************** Menu selection de mode *****************
@@ -40,7 +35,6 @@ public class LancerJeu {
 
         String choixJouer = "";
         choixJouer = Main.scan.nextLine();
-
         switch (choixJouer) {
             case "1" -> {
                 System.out.println("""
@@ -105,6 +99,7 @@ public class LancerJeu {
                     } else {
                         System.out.println("Votre calcul est erroné");
                     }
+
                     // Lettres
                     System.out.println("\nEtape LETTRES");
                     ArrayList<String> listMots = RecupMots.extraireMots();
@@ -197,6 +192,7 @@ public class LancerJeu {
                     System.out.println("Votre réponse " + name1 + " :");
                     String calcul1 = TempsJoueur.tempsJoueurReponseChiffre();
                     boolean calculcorrect1 = Verification.verificateurReponseCalcul(listePlaque,calcul1);
+
                     if (calculcorrect1){
                         System.out.println("Votre calcul est correct");
                         Verification.scoreJoueur1 += parseInt(RechercheCompte.objectif)-Verification.resultat;
@@ -206,13 +202,12 @@ public class LancerJeu {
                     System.out.println("Votre réponse " + name2 + " :");
                     String calcul2 = TempsJoueur.tempsJoueurReponseChiffre();
                     boolean calculcorrect2 = Verification.verificateurReponseCalcul(listePlaque,calcul2);
-                    if (calculcorrect2){
+                    if (calculcorrect2) {
                         System.out.println("Votre calcul est correct");
                         Verification.scoreJoueur1 += parseInt(RechercheCompte.objectif)-Verification.resultat;
                     } else {
                         System.out.println("Votre calcul est erroné");
                     }
-
 
                     // Lettres
                     System.out.println("\nEtape LETTRES");
@@ -220,11 +215,7 @@ public class LancerJeu {
                     ArrayList<String> tablettre = Lettre.partieLettreDeuxJoueur(name1, name2);
                     System.out.println("\nVous avez 60 secondes pour réflechir!");
                     Chrono.chrono(60);
-                   /* TempsJoueur.tempsJoueurReponseLettre();
-                    String motUtilisateur = SaisieUtilisateur.saisitMot();
-                    Verification.verificateurReponseMot(listMots,tablettre,motUtilisateur);
-                    TempsJoueur.tempsJoueurReponseLettre(); */
-
+                    TempsJoueur.tempsJoueurReponseLettre();
                     System.out.println("Joueur1, veuillez saisir votre mot: ");
                     String reponseUtilisateur1 = TempsJoueur.tempsJoueurReponseLettre();
                     System.out.println("Joueur2, veuillez saisir votre mot: ");
@@ -232,9 +223,7 @@ public class LancerJeu {
                     Boolean verifValiditeReponse1 = Verification.verificateurReponseMot(listMots,tablettre,reponseUtilisateur1);
                     Boolean verifValiditeReponse2 = Verification.verificateurReponseMot(listMots,tablettre,reponseUtilisateur2);
 
-
-
-                    if (verifValiditeReponse1 && reponseUtilisateur1.equals(reponseUtilisateur2)){
+                    if (verifValiditeReponse1 && reponseUtilisateur1.equals(reponseUtilisateur2)) {
                         verifValiditeReponse2 = true;
                     }
 

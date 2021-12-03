@@ -17,10 +17,6 @@ public class Main {
      * @param args the input arguments
      */
     public static void main(String[] args) {
-
-
-
-
         System.out.println("""
                 ***********************************************************
                 ***********************************************************
@@ -30,8 +26,6 @@ public class Main {
                 """);
 
         boolean jeuActif = true;
-
-
         while (jeuActif) {
             System.out.println("""
                     ***********************************************************

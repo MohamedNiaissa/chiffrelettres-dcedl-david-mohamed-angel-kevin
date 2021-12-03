@@ -5,8 +5,6 @@ import java.util.*;
  * Type Temps joueur.
  */
 public class TempsJoueur {
-
-
     static boolean valUtiliChiffre = false;
     /**
      * Temps joueur reponse lettre string.

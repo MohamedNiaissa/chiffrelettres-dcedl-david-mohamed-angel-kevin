@@ -19,10 +19,6 @@ public class Verification {
      * @return un boolean
      */
     public static boolean verificateurReponseMot(ArrayList<String> tab,ArrayList<String> tablettre ,String mot){
-        /**
-         *
-         */
-
         ArrayList<Character> listeDecouperMot = new ArrayList<>();
         ArrayList<String> listeDecouperMotString = new ArrayList<>();
         int compteur = 0;
@@ -57,7 +53,8 @@ public class Verification {
             return false;
         }
     }
-    public static int jouerGagnantMancheLettre(String motUtilisateur1, String motUtilisateur2){
+
+    public static int jouerGagnantMancheLettre(String motUtilisateur1, String motUtilisateur2) {
         if (motUtilisateur2.length() > motUtilisateur1.length()){
             System.out.println("L'IA gagne avec le mot " + motUtilisateur2);
             return scoreJoueur2+= motUtilisateur2.length();
@@ -69,7 +66,8 @@ public class Verification {
             return 0;
         }
     }
-    public static boolean verificateurReponseCalcul(List<Integer> plaquette, String proposition){
+
+    public static boolean verificateurReponseCalcul(List<Integer> plaquette, String proposition) {
         List<Integer> savePlaquette = new ArrayList<>();
         for (int i = 0; i < plaquette.size(); i++) {
             savePlaquette.add(plaquette.get(i));
@@ -97,25 +95,26 @@ public class Verification {
                 verif.add(Character.toString(proposition.charAt(i)));
             }
         }
-        if (verif.size()==0){
+        if (verif.size()==0) {
             return false;
         }
+
         resultat = Integer.parseInt((verif.get(0)));
         int selection = 1;
         for (int i = 1; i < proposition.length(); i++) {
-            if (Character.toString(proposition.charAt(i)).equals("+")){
+            if (Character.toString(proposition.charAt(i)).equals("+")) {
                 resultat += Integer.parseInt((verif.get(selection)));
                 selection++;
             }
-            if (Character.toString(proposition.charAt(i)).equals("-")){
+            if (Character.toString(proposition.charAt(i)).equals("-")) {
                 resultat -= Integer.parseInt((verif.get(selection)));
                 selection++;
             }
-            if (Character.toString(proposition.charAt(i)).equals("*")){
+            if (Character.toString(proposition.charAt(i)).equals("*")) {
                 resultat *= Integer.parseInt((verif.get(selection)));
                 selection++;
             }
-            if (Character.toString(proposition.charAt(i)).equals("/")){
+            if (Character.toString(proposition.charAt(i)).equals("/")) {
                 resultat /= Integer.parseInt((verif.get(selection)));
                 selection++;
             }
@@ -123,7 +122,7 @@ public class Verification {
         System.out.println(resultat);
         for (int i = 0; i < savePlaquette.size(); i++) {
             for (int j = 0; j < verif.size(); j++) {
-                if ((savePlaquette.get(i)+"").contains(verif.get(j)+"")){
+                if ((savePlaquette.get(i)+"").contains(verif.get(j)+"")) {
                     verif.remove(j);
                     savePlaquette.remove(i);
                     i = 0;
@@ -131,7 +130,8 @@ public class Verification {
                 }
             }
         }
-        if (verif.size()==0){
+
+        if (verif.size()==0) {
             return true;
         } else {
             return false;

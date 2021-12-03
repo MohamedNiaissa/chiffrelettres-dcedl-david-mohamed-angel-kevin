@@ -49,11 +49,9 @@ class SaisieUtilisateur {
         String[] voyelles = {"a","e","i","o","u","y"};
         String voyellesverif = "aeiouy";
         String[] consonnes = {"b","c","d","f","g","h","j","k","l","m","n","p","q","r","s","t","v","w","x","z"};
-
         ArrayList<String[]> listeVoyelleConsonne = new ArrayList<>();
         listeVoyelleConsonne.add(voyelles);
         listeVoyelleConsonne.add(consonnes);
-
 
         int randTab = new Random().nextInt(listeVoyelleConsonne.size());
         String[] tabHasard = listeVoyelleConsonne.get(randTab);
@@ -77,16 +75,13 @@ class SaisieUtilisateur {
      */
     public static String saisitMot(){
         String motUtilisateur = Main.scan.nextLine();
-
         return  motUtilisateur;
     }
 
     public static String saisitChiffre(){
         String chiffreUtilisateur = Main.scan.next();
-
-    return  chiffreUtilisateur;
+        return  chiffreUtilisateur;
     }
-
 
     /**
      * Tentative utilisateur string.
@@ -94,10 +89,8 @@ class SaisieUtilisateur {
      * @return un string
      */
     public static String tentativeUtilisateur(){
-
         String mot = Main.scan.nextLine();
         return mot;
-
     }
 
     /**
@@ -112,7 +105,6 @@ class SaisieUtilisateur {
      * The Rang 3.
      */
     static List<Integer> Rang3 = new ArrayList<>();
-
     /**
      * Raffraichir rang.
      */
@@ -140,16 +132,16 @@ class SaisieUtilisateur {
      */
     public static int saisieRang(String choix){
         switch (choix){
-            case "1" ->{
+            case "1" -> {
                 int random = (int) (Math.random()*(Rang1.size()));
                 int randomPlaque = Rang1.get(random);
                 Rang1.remove(random);
                 return randomPlaque;
             }
             case "2" ->{
-                if (Rang2.size()==0){
+                if (Rang2.size()==0) {
                     System.out.println("Il n'y a plus de plaque dans le rang 2");
-                    if (choix == LancerJeu.choixordi){
+                    if (choix == LancerJeu.choixordi) {
                         choix = (int) (Math.random()*(3)+1)+"";
                         System.out.println("La machine à choisit le rang " + choix + ".");
                     } else {
@@ -186,4 +178,3 @@ class SaisieUtilisateur {
         return 0;
     }
 }
-

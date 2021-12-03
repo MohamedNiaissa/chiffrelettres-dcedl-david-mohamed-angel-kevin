@@ -20,7 +20,7 @@ public class Lettre {
                 ***********************************************************
                 ********************** Instructions ***********************
                 ***********************************************************
-                Vous devez coisir 5 lettres
+                Vous devez choisir 5 lettres
                 5 lettres supplémentaires seront choisis par la machine
                 ***********************************************************
                 """);
