@@ -1,5 +1,4 @@
 package com.company;
-
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -22,6 +21,7 @@ public class RecupMots {
          */
 
         ArrayList<String> listeMots = new ArrayList<>();
+
         try {
             // Le fichier d'entrée
             File file = new File("src/com/company/liste_francais.txt");
@@ -30,19 +30,17 @@ public class RecupMots {
             // Créer l'objet BufferedReader
             BufferedReader br = new BufferedReader(fr);
             String line;
-            while((line = br.readLine()) != null)
-            {
+
+            while((line = br.readLine()) != null) {
                 // ajoute la ligne au buffer
                 listeMots.add(line);
             }
-            fr.close();
-            System.out.println(" Liste mots : " + listeMots);
 
-        }
-        catch(IOException e)
-        {
+            fr.close();
+        } catch (IOException e) {
             e.printStackTrace();
         }
+
         return listeMots;
     }
 }

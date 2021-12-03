@@ -9,6 +9,7 @@ import static java.lang.Integer.parseInt;
  * Type Recherche compte.
  */
 public class RechercheCompte{
+    static int scoreMachine = 0;
     static int[] operation = new int[5];
     static List<Integer> list = new ArrayList<>();
     static String ope;
@@ -162,7 +163,7 @@ public class RechercheCompte{
             list.set(j, list.get(j+1));
             list.set(j+1,stock);
         }
-        if (parseInt(pluspres) == 0){
+        if (parseInt(pluspres) == 0) {
             List<String> opecorrectcorrige = new ArrayList<>();
             String correct = opeccorrect.get(0);
             for (int i = 1; i < opeccorrect.size(); i++) {
@@ -181,6 +182,7 @@ public class RechercheCompte{
             }
             opecorrectcorrige.add(correct);
             System.out.println("On pouvait atteindre " + (parseInt(objectif)-plusprestrouve) + " comme ceci " + opecorrectcorrige);
+            scoreMachine += 10;
         } else {
             System.out.println("La plus proche valeur différait de " + (plusprestrouve*-1));
             System.out.println(parseInt(objectif)-plusprestrouve);

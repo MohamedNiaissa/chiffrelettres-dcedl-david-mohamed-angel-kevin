@@ -76,11 +76,15 @@ class SaisieUtilisateur {
      * @return un string
      */
     public static String saisitMot(){
-
         String motUtilisateur = Main.scan.nextLine();
 
         return  motUtilisateur;
+    }
 
+    public static String saisitChiffre(){
+        String chiffreUtilisateur = Main.scan.next();
+
+    return  chiffreUtilisateur;
     }
 
 
