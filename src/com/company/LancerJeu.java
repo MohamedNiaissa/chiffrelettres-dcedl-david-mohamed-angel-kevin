@@ -70,8 +70,8 @@ public class LancerJeu {
                             """);
 
                     List<Integer> listePlaque = new ArrayList<>();
+                    SaisieUtilisateur.raffraichirRang();
                     for (int j = 0; j < 3; j++) {
-                        SaisieUtilisateur.raffraichirRang();
                         System.out.println("Dans quel rang piochez-vous, " + name + " ?");
                         String choix = Main.scan.next();
 
@@ -95,6 +95,7 @@ public class LancerJeu {
                     boolean calculcorrect = Verification.verificateurReponseCalcul(listePlaque,calcul);
                     if (calculcorrect){
                         System.out.println("Votre calcul est correct");
+                        Verification.scoreJoueur1 += parseInt(RechercheCompte.objectif)-Verification.resultat;
                     } else {
                         System.out.println("Votre calcul est erroné");
                     }
@@ -153,36 +154,50 @@ public class LancerJeu {
                             ***********************************************************
                             """);
 
+                    List<Integer> listePlaque = new ArrayList<>();
                     SaisieUtilisateur.raffraichirRang();
-                    int[] listePlaque = new int[6];
-                    for (int j = 0; j < 6; j += 2) {
+                    for (int j = 0; j < 3; j++) {
                         System.out.println("Dans quel rang piochez-vous, " + name1 + " ?");
                         String choix1 = Main.scan.next();
 
-                        while (!(choix1.equals("1") || choix1.equals("2") || choix1.equals("3"))){
+                        while (!(choix1.equals("1") || choix1.equals("2") || choix1.equals("3"))) {
                             System.out.println("Vous ne pouvez choisir que le rang 1, 2 ou 3.");
                             choix1 = Main.scan.next();
                         }
 
-                        listePlaque[j] = SaisieUtilisateur.saisieRang(choix1);
+                        listePlaque.add(SaisieUtilisateur.saisieRang(choix1));
                         System.out.println("Dans quel rang piochez-vous, " + name2 + " ?");
                         String choix2 = Main.scan.next();
 
-                        while (!(choix2.equals("1") || choix2.equals("2") || choix2.equals("3"))){
+                        while (!(choix2.equals("1") || choix2.equals("2") || choix2.equals("3"))) {
                             System.out.println("Vous ne pouvez choisir que le rang 1, 2 ou 3.");
                             choix2 = Main.scan.next();
                         }
 
-                        listePlaque[j + 1] = SaisieUtilisateur.saisieRang(choix2);
+                        listePlaque.add(SaisieUtilisateur.saisieRang(choix2));
                     }
 
                     System.out.println((int) (Math.random() * (999-101) + 101));
-                    System.out.println(Arrays.toString(listePlaque));
-                    Chrono.chrono(60);
+                    System.out.println(listePlaque);
+                    Chrono.chrono(10);
                     System.out.println("Votre réponse " + name1 + " :");
-                    TempsJoueur.tempsJoueurReponseLettre();
+                    String calcul1 = TempsJoueur.tempsJoueurReponseChiffre();
+                    boolean calculcorrect1 = Verification.verificateurReponseCalcul(listePlaque,calcul1);
+                    if (calculcorrect1){
+                        System.out.println("Votre calcul est correct");
+                        Verification.scoreJoueur1 += parseInt(RechercheCompte.objectif)-Verification.resultat;
+                    } else {
+                        System.out.println("Votre calcul est erroné");
+                    }
                     System.out.println("Votre réponse " + name2 + " :");
-                    TempsJoueur.tempsJoueurReponseLettre();
+                    String calcul2 = TempsJoueur.tempsJoueurReponseChiffre();
+                    boolean calculcorrect2 = Verification.verificateurReponseCalcul(listePlaque,calcul2);
+                    if (calculcorrect2){
+                        System.out.println("Votre calcul est correct");
+                        Verification.scoreJoueur1 += parseInt(RechercheCompte.objectif)-Verification.resultat;
+                    } else {
+                        System.out.println("Votre calcul est erroné");
+                    }
 
                     // Lettres
                     System.out.println("\nEtape LETTRES");

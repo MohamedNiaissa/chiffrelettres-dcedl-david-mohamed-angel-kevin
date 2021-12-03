@@ -182,6 +182,7 @@ public class RechercheCompte{
             }
             opecorrectcorrige.add(correct);
             System.out.println("On pouvait atteindre " + (parseInt(objectif)-plusprestrouve) + " comme ceci " + opecorrectcorrige);
+            scoreMachine += 10;
         } else {
             System.out.println("La plus proche valeur différait de " + (plusprestrouve*-1));
             System.out.println(parseInt(objectif)-plusprestrouve);

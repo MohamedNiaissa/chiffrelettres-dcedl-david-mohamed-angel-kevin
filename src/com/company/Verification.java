@@ -76,6 +76,10 @@ public class Verification {
         }
     }
     public static boolean verificateurReponseCalcul(List<Integer> plaquette, String proposition){
+        List<Integer> savePlaquette = new ArrayList<>();
+        for (int i = 0; i < plaquette.size(); i++) {
+            savePlaquette.add(plaquette.get(i));
+        }
         List<String> verif = new ArrayList<>();
         for (int i = 0; i < proposition.length(); i++) {
             if (proposition.length()-i-2 > 0) {
@@ -123,11 +127,11 @@ public class Verification {
             }
         }
         System.out.println(resultat);
-        for (int i = 0; i < plaquette.size(); i++) {
+        for (int i = 0; i < savePlaquette.size(); i++) {
             for (int j = 0; j < verif.size(); j++) {
-                if ((plaquette.get(i)+"").contains(verif.get(j)+"")){
+                if ((savePlaquette.get(i)+"").contains(verif.get(j)+"")){
                     verif.remove(j);
-                    plaquette.remove(i);
+                    savePlaquette.remove(i);
                     i = 0;
                     break;
                 }

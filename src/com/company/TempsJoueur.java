@@ -38,7 +38,7 @@ public class TempsJoueur {
 
         while (bool[0]) {
             Timer timer = new Timer();
-            timer.schedule(task, 10000);
+            timer.schedule(task, 30000);
 
             valUtilistateur = SaisieUtilisateur.saisitMot();
             timer.cancel();
@@ -76,7 +76,7 @@ public class TempsJoueur {
 
             while (bool[0]) {
                 Timer timer = new Timer();
-                timer.schedule(task, 10000);
+                timer.schedule(task, 30000);
                 valUtilistateur = SaisieUtilisateur.saisitChiffre();
                 timer.cancel();
                 System.out.println("Vous avez saisie : " + valUtilistateur);
