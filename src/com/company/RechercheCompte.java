@@ -9,6 +9,7 @@ public class RechercheCompte{
     static int[] operation = new int[5];
     static List<Integer> list = new ArrayList<>();
     static String ope;
+    static String sauvegardeope = "";
     static int plusprestrouve = 1000;
     static List<String> opeccorrect = new ArrayList<>();
     static String objectif = 0+"";
@@ -17,11 +18,18 @@ public class RechercheCompte{
     public static void verification(){
         ope = list.get(0) + "";
         valeur = list.get(0) + "";
+        sauvegardeope = "";
         for (int i = 1; i < 4; i++) {
             if (operation[i]==1) {
                 valeur = parseInt(valeur) + list.get(i)+"";
-                ope += "+" +list.get(i);
+                ope += "+" +list.get(i) + ")";
                 if (valeur.equals(objectif)){
+                    sauvegardeope = ope;
+                    ope = "";
+                    for (int j = 0; j < i; j++) {
+                        ope += "(";
+                    }
+                    ope += sauvegardeope;
                     opeccorrect.add(ope);
                     break;
                 }
@@ -30,15 +38,30 @@ public class RechercheCompte{
                     break;
                 }
                 valeur = parseInt(valeur)-list.get(i)+"";
-                ope += "-" +list.get(i);
+                ope += "-" +list.get(i) + ")";
                 if (valeur.equals(objectif)){
+                    sauvegardeope = ope;
+                    ope = "";
+                    for (int j = 0; j < i; j++) {
+                        ope += "(";
+                    }
+                    ope += sauvegardeope;
                     opeccorrect.add(ope);
                     break;
                 }
             }else if (operation[i]==3) {
+                if (list.get(i).equals(1)||valeur.equals("1")){
+                    break;
+                }
                 valeur = parseInt(valeur)*list.get(i)+"";
-                ope += "*" +list.get(i);
+                ope += "*" +list.get(i) + ")";
                 if (valeur.equals(objectif)){
+                    sauvegardeope = ope;
+                    ope = "";
+                    for (int j = 0; j < i; j++) {
+                        ope += "(";
+                    }
+                    ope += sauvegardeope;
                     opeccorrect.add(ope);
                     break;
                 }
@@ -47,8 +70,14 @@ public class RechercheCompte{
                     break;
                 }
                 valeur = parseInt(valeur)/list.get(i)+"";
-                ope += "/" +list.get(i);
+                ope += "/" +list.get(i) + ")";
                 if (valeur.equals(objectif)){
+                    sauvegardeope = ope;
+                    ope = "";
+                    for (int j = 0; j < i; j++) {
+                        ope += "(";
+                    }
+                    ope += sauvegardeope;
                     opeccorrect.add(ope);
                     break;
                 }
@@ -91,9 +120,6 @@ public class RechercheCompte{
     public static void toutOrdre(List<Integer> plaquette, String recherche){
         list = plaquette;
         objectif = recherche;
-        for (int i = 1; i <= 6; i++) {
-            list.add(i);
-        }
         for (int j = 0; j < 5; j++) {
             for (int h = 0; h < 6; h++) {
                 int stock = list.get(0);
@@ -107,14 +133,29 @@ public class RechercheCompte{
             list.set(j, list.get(j+1));
             list.set(j+1,stock);
         }
-
         if (parseInt(pluspres) == 0){
-            System.out.println("On pouvait atteindre le résultat comme ceux-ci " + opeccorrect);
+            List<String> opecorrectcorrige = new ArrayList<>();
+            String correct = opeccorrect.get(0);
+            for (int i = 1; i < opeccorrect.size(); i++) {
+                boolean pasDeja = true;
+                if (!(opeccorrect.get(i).equals(correct))) {
+                    for (int j = 0; j < opecorrectcorrige.size(); j++) {
+                        if (opecorrectcorrige.get(j).equals(correct)){
+                            correct = opeccorrect.get(i);
+                            pasDeja = false;
+                        }
+                    }
+                    if (pasDeja) {
+                        opecorrectcorrige.add(correct);
+                    }
+                }
+            }
+            opecorrectcorrige.add(correct);
+            System.out.println("On pouvait atteindre " + (parseInt(objectif)-plusprestrouve) + " comme ceci " + opecorrectcorrige);
         } else {
-            System.out.println("La plus proche valeur différait de " + plusprestrouve);
+            System.out.println("La plus proche valeur différait de " + (plusprestrouve*-1));
             System.out.println(parseInt(objectif)-plusprestrouve);
             toutOrdre(list,(parseInt(objectif)-plusprestrouve)+"");
-
         }
     }
 }
