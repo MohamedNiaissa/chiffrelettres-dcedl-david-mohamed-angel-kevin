@@ -1,12 +1,13 @@
 package com.company;
 
 public class Chrono {
-
-    public static void chrono(int seconde){
+    public static void chrono(int seconde) {
         int temps = seconde;
+
         System.out.println(0 + "...|...10....|...20....|...30....|...40....|...50....|..." + temps);
+
         for (int i = 0; i < seconde; i++) {
-            try{
+            try {
                 Thread.sleep(1000);
                 temps--;
                 if (i == 0){
@@ -16,11 +17,10 @@ public class Chrono {
                 } else {
                     System.out.print("-");
                 }
-            }catch(InterruptedException e) {
+            } catch (InterruptedException e) {
                 e.printStackTrace();
             }
         }
         System.out.println();
     }
-
 }
