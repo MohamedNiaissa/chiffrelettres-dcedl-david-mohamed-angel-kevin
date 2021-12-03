@@ -2,7 +2,7 @@ package com.company;
 import java.util.*;
 
 class SaisieUtilisateur {
-    public static String saisieConsVoy(String name){
+    public static String SaisieConsVoy(String name){
         String[] voyelles = {"a","e","i","o","u","y"};
         String[] consonnes = {"b","c","d","f","g","h","j","k","l","m","n","p","q","r","s","t","v","w","x","z"};
 
@@ -112,11 +112,11 @@ class SaisieUtilisateur {
                 Rang2.remove(random);
                 return randomPlaque;
             }
-            case "3" ->{
-                if (Rang3.size()==0){
+            case "3" -> {
+                if (Rang3.size() == 0) {
                     System.out.println("Il n'y a plus de plaque dans le rang 3");
-                    if (choix == LancerJeu.choixordi){
-                        choix = (int) (Math.random()*(3)+1)+"";
+                    if (choix == LancerJeu.choixordi) {
+                        choix = (int) (Math.random() * (3) + 1) + "";
                         System.out.println("La machine à choisit le rang " + choix + ".");
                     } else {
                         System.out.println("Dans quel rang piochez-vous ?");
@@ -125,7 +125,7 @@ class SaisieUtilisateur {
                     int randomPlaque = saisieRang(choix);
                     return randomPlaque;
                 }
-                int random = (int) (Math.random()*(Rang3.size()));
+                int random = (int) (Math.random() * (Rang3.size()));
                 int randomPlaque = Rang3.get(random);
                 Rang3.remove(random);
                 return randomPlaque;

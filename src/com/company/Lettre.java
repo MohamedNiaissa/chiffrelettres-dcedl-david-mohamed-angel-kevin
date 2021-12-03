@@ -17,7 +17,7 @@ public class Lettre {
 
         for (int i = 1; i <= 5 ; i++) {
 
-            String lettreUtilisateur = SaisieUtilisateur.saisieConsVoy(name);
+            String lettreUtilisateur = SaisieUtilisateur.SaisieConsVoy(name);
             lettreChoisis.add(lettreUtilisateur);
 
             System.out.println(lettreChoisis);
@@ -44,12 +44,12 @@ public class Lettre {
 
         for (int i = 1; i <= 5 ; i++) {
 
-            String lettreUtilisateur = SaisieUtilisateur.saisieConsVoy(name1);
+            String lettreUtilisateur = SaisieUtilisateur.SaisieConsVoy(name1);
             lettreChoisis.add(lettreUtilisateur);
 
             System.out.println(lettreChoisis);
 
-            String lettreUtilisateur2 = SaisieUtilisateur.saisieConsVoy(name2);
+            String lettreUtilisateur2 = SaisieUtilisateur.SaisieConsVoy(name2);
             lettreChoisis.add(lettreUtilisateur2);
 
             System.out.println(lettreChoisis);
