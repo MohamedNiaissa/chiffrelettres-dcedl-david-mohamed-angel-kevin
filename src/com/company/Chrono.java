@@ -31,6 +31,11 @@ public class Chrono {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
+
+            if (i == 14){
+                Thread playWave = new music.AePlayWave("src/com/company/ChiffresLettresAmbiance.wav");
+                playWave.start();
+            }
         }
         System.out.println();
     }

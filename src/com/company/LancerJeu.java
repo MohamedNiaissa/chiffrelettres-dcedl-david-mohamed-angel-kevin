@@ -16,12 +16,16 @@ public class LancerJeu {
      * Sélection mode menu.
      */
     public static void menuSelectionMode() {
+
+
+
         /**
          * Affiche le menu qui contient le mode jeu :
          * 1. Joueur contre machine
          * 2. Joueur 1 contre Joueur 2
          * 3. Revenir au menu principal
          */
+
 
         System.out.println("""
                 ***********************************************************
@@ -189,7 +193,7 @@ public class LancerJeu {
                     System.out.println("\nLes chiffes dont vous disposez pour effectuer ce calcule sont : ");
                     System.out.println(listePlaque + "\n");
                     System.out.println("\nVous avez 60 secondes pour réflechir!");
-                    Chrono.chrono(5);
+                    Chrono.chrono(60);
                     System.out.println("Votre réponse " + name1 + " :");
                     String calcul1 = TempsJoueur.tempsJoueurReponseChiffre();
                     boolean calculcorrect1 = Verification.verificateurReponseCalcul(listePlaque,calcul1);
