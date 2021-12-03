@@ -49,9 +49,11 @@ public class LancerJeu {
                     String calcul = Main.scan.next();
                     RechercheCompte.toutOrdre(listePlaque,objectif);
                     boolean calculcorrect = Verification.verificateurReponseCalcul(listePlaque,calcul);
-                    System.out.println(calculcorrect);
-                    System.out.println();
-
+                    if (calculcorrect){
+                        System.out.println("Votre calcul est correct");
+                    } else {
+                        System.out.println("Votre calcul est erroné");
+                    }
                     // Lettres
                     ArrayList<String> tablettre = Lettre.partieLettreUnJoueur(name);
                     Chrono.chrono(60);
