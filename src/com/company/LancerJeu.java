@@ -92,7 +92,7 @@ public class LancerJeu {
                     System.out.println(listePlaque);
                     System.out.println("\nVous avez 60 secondes pour réflechir!");
                     Chrono.chrono(60);
-                    TempsJoueur.tempsJoueurReponseChiffre();
+                    String calcul = TempsJoueur.tempsJoueurReponseChiffre();
                     RechercheCompte.toutOrdre(listePlaque,objectif);
                     boolean calculcorrect = Verification.verificateurReponseCalcul(listePlaque,calcul);
                     if (calculcorrect){
@@ -117,7 +117,7 @@ public class LancerJeu {
                         Verification.jouerGagnantMancheLettre(reponseUtilisateur,reponseMachine);
                     } else {
                         System.out.println("L'IA a trouvé le mot " + reponseMachine);
-                        Verification.scoreJoueur2++;
+                        Verification.scoreJoueur2 += reponseMachine.length();
                         System.out.println("Votre réponse n'étant point valide l'IA gagne cette étape");
                         System.out.println("L'IA a "+Verification.scoreJoueur2+" points.");
                     }
@@ -213,13 +213,13 @@ public class LancerJeu {
                     // Lettres
                     System.out.println("\nEtape LETTRES");
                     ArrayList<String> listMots = RecupMots.extraireMots();
-                    ArrayList<String> tablettre = Lettre.partieLettreUnJoueur();
+                    ArrayList<String> tablettre = Lettre.partieLettreDeuxJoueur(name1, name2);
                     System.out.println("\nVous avez 60 secondes pour réflechir!");
                     Chrono.chrono(60);
-                    TempsJoueur.tempsJoueurReponseLettre();
+                   /* TempsJoueur.tempsJoueurReponseLettre();
                     String motUtilisateur = SaisieUtilisateur.saisitMot();
                     Verification.verificateurReponseMot(listMots,tablettre,motUtilisateur);
-                    TempsJoueur.tempsJoueurReponseLettre();
+                    TempsJoueur.tempsJoueurReponseLettre(); */
 
                     System.out.println("Joueur1, veuillez saisir votre mot: ");
                     String reponseUtilisateur1 = TempsJoueur.tempsJoueurReponseLettre();
@@ -227,6 +227,12 @@ public class LancerJeu {
                     String reponseUtilisateur2 = TempsJoueur.tempsJoueurReponseLettre();
                     Boolean verifValiditeReponse1 = Verification.verificateurReponseMot(listMots,tablettre,reponseUtilisateur1);
                     Boolean verifValiditeReponse2 = Verification.verificateurReponseMot(listMots,tablettre,reponseUtilisateur2);
+
+
+
+                    if (verifValiditeReponse1 && reponseUtilisateur1.equals(reponseUtilisateur2)){
+                        verifValiditeReponse2 = true;
+                    }
 
                     if (verifValiditeReponse1 && verifValiditeReponse2) {
                         if (reponseUtilisateur1.length() > reponseUtilisateur2.length()) {
