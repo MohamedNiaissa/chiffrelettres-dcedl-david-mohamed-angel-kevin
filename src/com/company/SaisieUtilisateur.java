@@ -37,6 +37,7 @@ public class SaisieUtilisateur {
 
     public static String saisieConsVoyRobot() {
         String[] voyelles = {"a","e","i","o","u","y"};
+        String voyellesverif = "aeiouy";
         String[] consonnes = {"b","c","d","f","g","h","j","k","l","m","n","p","q","r","s","t","v","w","x","z"};
         ArrayList<String[]> listeVoyelleConsonne = new ArrayList<>();
 
