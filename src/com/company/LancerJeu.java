@@ -63,13 +63,6 @@ public class LancerJeu {
                     Verification.verificateurReponseMot(listMots,tablettre,motUtilisateur);
                     tempsJoueur.tempsJoueurReponseLettre();
                 }
-
-               /* long debut = System.currentTimeMillis();
-                long fin = System.currentTimeMillis();
-                if (fin-debut > 30000){
-                    System.out.println("Vous avez été trop long");
-                }
-                System.out.println("Résultat enregistré"); */
             }
             case "2" -> {
                 System.out.println("Joueur 1 contre jouer 2");
