@@ -15,6 +15,7 @@ public class RechercheCompte{
     static String objectif = 0+"";
     static String pluspres = 1000+"";
     static String valeur = 0+"";
+
     public static void verification(){
         ope = list.get(0) + "";
         valeur = list.get(0) + "";
@@ -117,7 +118,7 @@ public class RechercheCompte{
             operation[1]=0;
         }
     }
-    public static void toutOrdre(List<Integer> plaquette, String recherche){
+    public static void toutOrdre(List<Integer> plaquette, String recherche) {
         list = plaquette;
         objectif = recherche;
         for (int j = 0; j < 5; j++) {
@@ -133,7 +134,7 @@ public class RechercheCompte{
             list.set(j, list.get(j+1));
             list.set(j+1,stock);
         }
-        if (parseInt(pluspres) == 0){
+        if (parseInt(pluspres) == 0) {
             List<String> opecorrectcorrige = new ArrayList<>();
             String correct = opeccorrect.get(0);
             for (int i = 1; i < opeccorrect.size(); i++) {

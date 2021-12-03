@@ -31,12 +31,6 @@ public class Verification {
                         }
                     }
                 }
-
-                if (compteur == mot.length()) {
-                    return true;
-                } else {
-                    return false;
-                }
             }
         }
 

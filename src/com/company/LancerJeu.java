@@ -6,13 +6,14 @@ import java.util.List;
 public class LancerJeu {
     static String name = "";
     public static String choixordi;
+
     public static void menuSelectionMode() {
         System.out.println("""
                 ***********************************************************
                 ****************** Menu selection de mode *****************
                 ***********************************************************
                 Pour jouer contre la machine tapez -> 1
-                Pour jouer contre un autre jouer tapez -> 2
+                Pour jouer contre un autre joueur tapez -> 2
                 ***********************************************************
                 Pour revenir au menu principal tapez -> 3
                 ***********************************************************
@@ -56,7 +57,7 @@ public class LancerJeu {
                     List<Integer> listePlaque = new ArrayList<>();
                     for (int j = 0; j < 3; j++) {
                         SaisieUtilisateur.raffraichirRang();
-                        System.out.println("Dans quel rang piochez-vous, " + name + " ?");
+                        System.out.println("\nDans quel rang piochez-vous, " + name + " ?");
                         String choix = Main.scan.next();
 
                         while (!(choix.equals("1") || choix.equals("2") || choix.equals("3"))) {
@@ -71,9 +72,11 @@ public class LancerJeu {
                     }
 
                     String objectif = (int) (Math.random()*(999-101)+101)+"";
-                    System.out.println(objectif);
+                    System.out.println("\nLe chiffre que vous devez attendre avec vos calculs est : " + (int) (Math.random() * (999-101) + 101));
+                    System.out.println("\nLes chiffes dont vous disposez pour effectuer ce calcule sont : ");
                     System.out.println(listePlaque);
-                    Chrono.chrono(10);
+                    System.out.println("\nVous avez 60 secondes pour réflechir!");
+                    Chrono.chrono(60);
                     TempsJoueur.tempsJoueurReponseChiffre();
                     RechercheCompte.toutOrdre(listePlaque,objectif);
 
@@ -81,7 +84,8 @@ public class LancerJeu {
                     System.out.println("\nEtape LETTRES");
                     ArrayList<String> listMots = RecupMots.extraireMots();
                     ArrayList<String> tablettre = Lettre.partieLettreUnJoueur();
-                    Chrono.chrono(2);
+                    System.out.println("\nVous avez 60 secondes pour réflechir!");
+                    Chrono.chrono(60);
                     String reponseUtilisateur = TempsJoueur.tempsJoueurReponseLettre();
                     Boolean verifValiditeReponse = Verification.verificateurReponseMot(listMots,tablettre,reponseUtilisateur);
 
@@ -130,43 +134,54 @@ public class LancerJeu {
                             - Rang 2 : 2 plaques de 25 et 2 plaques de 50
                             - Rang 3 : 2 plaques de 75 et 2 plaques de 100
                             ***********************************************************
+                            Lors de la saisie de votre réponse,
+                            vous devez saisir l'esemble d'operations mathematiques
+                            (addition, sustraction, multiplication et division
+                            ***********************************************************
                             """);
 
                     SaisieUtilisateur.raffraichirRang();
-                    int[] listePlaque = new int[6];
+                    List<Integer> listePlaque = new ArrayList<>();
+                    // int[] listePlaque = new int[6];
                     for (int j = 0; j < 6; j += 2) {
                         System.out.println("Dans quel rang piochez-vous, " + name1 + " ?");
                         String choix1 = Main.scan.next();
 
-                        while (choix1 != "1" && choix1 != "2" && choix1 != "3"){
+                        while (choix1.equals("1") && choix1.equals("2") && choix1.equals("3")) {
                             System.out.println("Vous ne pouvez choisir que le rang 1, 2 ou 3.");
                             choix1 = Main.scan.next();
                         }
 
-                        listePlaque[j] = SaisieUtilisateur.saisieRang(choix1);
+                        listePlaque.add(SaisieUtilisateur.saisieRang(choix1));
                         System.out.println("Dans quel rang piochez-vous, " + name2 + " ?");
                         String choix2 = Main.scan.next();
 
-                        while (choix2 != "1" && choix2 != "2" && choix2 != "3"){
+                        while (choix1.equals("1") && choix1.equals("2") && choix1.equals("3")) {
                             System.out.println("Vous ne pouvez choisir que le rang 1, 2 ou 3.");
                             choix2 = Main.scan.next();
                         }
 
-                        listePlaque[j + 1] = SaisieUtilisateur.saisieRang(choix2);
+                        listePlaque.add(SaisieUtilisateur.saisieRang(choix2));
                     }
 
-                    System.out.println((int) (Math.random() * (999-101) + 101));
-                    System.out.println(Arrays.toString(listePlaque));
-                    Chrono.chrono(60);
+                    String objectif = (int) (Math.random()*(999-101)+101)+"";
+                    System.out.println("\nLe chiffre que vous devez attendre avec vos calculs est : " + objectif);
+                    System.out.println("\nLes chiffes dont vous disposez pour effectuer ce calcule sont : ");
+                    System.out.println(listePlaque + "\n");
+                    System.out.println("\nVous avez 60 secondes pour réflechir!");
+                    Chrono.chrono(5);
                     System.out.println("Votre réponse " + name1 + " :");
-                    TempsJoueur.tempsJoueurReponseLettre();
+                    TempsJoueur.tempsJoueurReponseChiffre();
                     System.out.println("Votre réponse " + name2 + " :");
-                    TempsJoueur.tempsJoueurReponseLettre();
+                    TempsJoueur.tempsJoueurReponseChiffre();
+                    RechercheCompte.toutOrdre(listePlaque,objectif);
+
 
                     // Lettres
                     System.out.println("\nEtape LETTRES");
                     ArrayList<String> listMots = RecupMots.extraireMots();
                     ArrayList<String> tablettre = Lettre.partieLettreUnJoueur();
+                    System.out.println("\nVous avez 60 secondes pour réflechir!");
                     Chrono.chrono(60);
                     TempsJoueur.tempsJoueurReponseLettre();
                     String motUtilisateur = SaisieUtilisateur.saisitMot();
