@@ -76,7 +76,7 @@ public class LancerJeu {
                     System.out.println(objectif);
                     System.out.println(listePlaque);
                     Chrono.chrono(10);
-                    TempsJoueur.tempsJoueurReponseChiffre();
+                    String calcul = TempsJoueur.tempsJoueurReponseChiffre();
                     RechercheCompte.toutOrdre(listePlaque,objectif);
                     boolean calculcorrect = Verification.verificateurReponseCalcul(listePlaque,calcul);
                     if (calculcorrect){

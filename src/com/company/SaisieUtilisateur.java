@@ -59,8 +59,8 @@ class SaisieUtilisateur {
         return  motUtilisateur;
     }
 
-    public static int saisitChiffre(){
-        int chiffreUtilisateur = Main.scan.nextInt();
+    public static String saisitChiffre(){
+        String chiffreUtilisateur = Main.scan.next();
 
     return  chiffreUtilisateur;
     }

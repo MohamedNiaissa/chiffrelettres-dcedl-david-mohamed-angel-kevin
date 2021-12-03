@@ -39,8 +39,8 @@ public class TempsJoueur {
         return "fin";
     }
 
-    public static int tempsJoueurReponseChiffre() {
-        int valUtilistateur = 0;
+    public static String tempsJoueurReponseChiffre() {
+        String valUtilistateur = "";
 
         try {
             String str ="";
@@ -72,6 +72,6 @@ public class TempsJoueur {
         } catch (Exception e) {
         }
 
-        return 0;
+        return "";
     }
 }

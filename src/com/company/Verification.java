@@ -49,8 +49,6 @@ public class Verification {
             return false;
         }
     }
-    public static boolean verificateurReponseCalcul(List<Integer> plaquette, String proposition){
-
     public static int jouerGagnantMancheLettre(String motUtilisateur1, String motUtilisateur2){
         if (motUtilisateur2.length() > motUtilisateur1.length()){
             System.out.println("L'IA gagne avec le mot " + motUtilisateur2);
@@ -63,6 +61,7 @@ public class Verification {
             return 0;
         }
     }
+    public static boolean verificateurReponseCalcul(List<Integer> plaquette, String proposition){
         List<String> verif = new ArrayList<>();
         for (int i = 0; i < proposition.length(); i++) {
             if (proposition.length()-i-2 > 0) {
