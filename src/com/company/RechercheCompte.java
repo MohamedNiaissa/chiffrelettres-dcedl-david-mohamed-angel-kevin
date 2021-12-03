@@ -163,7 +163,7 @@ public class RechercheCompte{
             list.set(j, list.get(j+1));
             list.set(j+1,stock);
         }
-        if (parseInt(pluspres) == 0){
+        if (parseInt(pluspres) == 0) {
             List<String> opecorrectcorrige = new ArrayList<>();
             String correct = opeccorrect.get(0);
             for (int i = 1; i < opeccorrect.size(); i++) {

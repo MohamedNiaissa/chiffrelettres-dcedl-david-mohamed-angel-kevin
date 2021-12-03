@@ -28,7 +28,7 @@ public class LancerJeu {
                 ****************** Menu selection de mode *****************
                 ***********************************************************
                 Pour jouer contre la machine tapez -> 1
-                Pour jouer contre un autre jouer tapez -> 2
+                Pour jouer contre un autre joueur tapez -> 2
                 ***********************************************************
                 Pour revenir au menu principal tapez -> 3
                 ***********************************************************
@@ -87,10 +87,12 @@ public class LancerJeu {
                     }
 
                     String objectif = (int) (Math.random()*(999-101)+101)+"";
-                    System.out.println(objectif);
+                    System.out.println("\nLe chiffre que vous devez attendre avec vos calculs est : " + (int) (Math.random() * (999-101) + 101));
+                    System.out.println("\nLes chiffes dont vous disposez pour effectuer ce calcule sont : ");
                     System.out.println(listePlaque);
-                    Chrono.chrono(10);
-                    String calcul = TempsJoueur.tempsJoueurReponseChiffre();
+                    System.out.println("\nVous avez 60 secondes pour réflechir!");
+                    Chrono.chrono(60);
+                    TempsJoueur.tempsJoueurReponseChiffre();
                     RechercheCompte.toutOrdre(listePlaque,objectif);
                     boolean calculcorrect = Verification.verificateurReponseCalcul(listePlaque,calcul);
                     if (calculcorrect){
@@ -103,7 +105,8 @@ public class LancerJeu {
                     System.out.println("\nEtape LETTRES");
                     ArrayList<String> listMots = RecupMots.extraireMots();
                     ArrayList<String> tablettre = Lettre.partieLettreUnJoueur();
-                    Chrono.chrono(2);
+                    System.out.println("\nVous avez 60 secondes pour réflechir!");
+                    Chrono.chrono(60);
                     String reponseUtilisateur = TempsJoueur.tempsJoueurReponseLettre();
                     Boolean verifValiditeReponse = Verification.verificateurReponseMot(listMots,tablettre,reponseUtilisateur);
 
@@ -152,6 +155,10 @@ public class LancerJeu {
                             - Rang 2 : 2 plaques de 25 et 2 plaques de 50
                             - Rang 3 : 2 plaques de 75 et 2 plaques de 100
                             ***********************************************************
+                            Lors de la saisie de votre réponse,
+                            vous devez saisir l'esemble d'operations mathematiques
+                            (addition, sustraction, multiplication et division
+                            ***********************************************************
                             """);
 
                     List<Integer> listePlaque = new ArrayList<>();
@@ -177,9 +184,12 @@ public class LancerJeu {
                         listePlaque.add(SaisieUtilisateur.saisieRang(choix2));
                     }
 
-                    System.out.println((int) (Math.random() * (999-101) + 101));
-                    System.out.println(listePlaque);
-                    Chrono.chrono(10);
+                    String objectif = (int) (Math.random()*(999-101)+101)+"";
+                    System.out.println("\nLe chiffre que vous devez attendre avec vos calculs est : " + objectif);
+                    System.out.println("\nLes chiffes dont vous disposez pour effectuer ce calcule sont : ");
+                    System.out.println(listePlaque + "\n");
+                    System.out.println("\nVous avez 60 secondes pour réflechir!");
+                    Chrono.chrono(5);
                     System.out.println("Votre réponse " + name1 + " :");
                     String calcul1 = TempsJoueur.tempsJoueurReponseChiffre();
                     boolean calculcorrect1 = Verification.verificateurReponseCalcul(listePlaque,calcul1);
@@ -199,10 +209,12 @@ public class LancerJeu {
                         System.out.println("Votre calcul est erroné");
                     }
 
+
                     // Lettres
                     System.out.println("\nEtape LETTRES");
                     ArrayList<String> listMots = RecupMots.extraireMots();
                     ArrayList<String> tablettre = Lettre.partieLettreUnJoueur();
+                    System.out.println("\nVous avez 60 secondes pour réflechir!");
                     Chrono.chrono(60);
                     TempsJoueur.tempsJoueurReponseLettre();
                     String motUtilisateur = SaisieUtilisateur.saisitMot();
