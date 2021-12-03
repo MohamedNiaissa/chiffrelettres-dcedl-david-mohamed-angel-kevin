@@ -54,13 +54,16 @@ class SaisieUtilisateur {
     }
 
     public static String saisitMot(){
-
         String motUtilisateur = Main.scan.nextLine();
 
         return  motUtilisateur;
-
     }
 
+    public static int saisitChiffre(){
+        int chiffreUtilisateur = Main.scan.nextInt();
+
+    return  chiffreUtilisateur;
+    }
 
     public static String tentativeUtilisateur(){
 
@@ -68,9 +71,11 @@ class SaisieUtilisateur {
         return mot;
 
     }
+
     static List<Integer> Rang1 = new ArrayList<>();
     static List<Integer> Rang2 = new ArrayList<>();
     static List<Integer> Rang3 = new ArrayList<>();
+
     public static void raffraichirRang(){
         for (int i = 0; i < 2; i++) {
             for (int j = 1; j <= 10; j++) {

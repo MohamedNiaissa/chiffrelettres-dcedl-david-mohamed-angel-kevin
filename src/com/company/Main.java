@@ -33,9 +33,10 @@ public class Main {
                             ***********************************************************
                             ************************ INSTRUCTIONS *********************
                             ***********************************************************
-                            Le jeu comporte deux étapes :
-                            - Étape 1: Les lettres
-                            - Étape 2: Les chiffres
+                            Le jeu à troix manches
+                            Chaque manche comporte deux étapes :
+                            - Étape 1: Les chiffres
+                            - Étape 2: Les lettres
                             ***********************************************************
                             Les étapes se succèdent l'une après l'autre automatiquement
                             ***********************************************************
