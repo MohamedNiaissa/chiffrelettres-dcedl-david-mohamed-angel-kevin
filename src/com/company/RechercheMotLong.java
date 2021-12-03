@@ -43,7 +43,7 @@ public class RechercheMotLong {
             compteur = 0;
         }
 
-        /* Trouver le mot le plus long*/
+        // Trouver le mot le plus long
         String motLePlusLongprovi = "";
         String motLePlusLong = "";
 
