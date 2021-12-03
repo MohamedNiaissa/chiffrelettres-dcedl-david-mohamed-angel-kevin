@@ -1,6 +1,9 @@
 package com.company;
 
 import java.util.ArrayList;
+import java.util.List;
+
+import static java.lang.Integer.parseInt;
 
 public class Verification {
 
@@ -52,10 +55,10 @@ public class Verification {
 
                 System.out.println("compteur = " + compteur);
 
-                if(compteur == mot.length()){
+                if (compteur == mot.length()){
                     System.out.println("Vrai mot");
                     return true;
-                }else {
+                } else {
                     System.out.println("Faux mot");
                     return false;
                 }
@@ -68,6 +71,66 @@ public class Verification {
         return true;
 
     }
+    public static boolean verificateurReponseCalcul(List<Integer> plaquette, String proposition){
 
-
+        List<String> verif = new ArrayList<>();
+        for (int i = 0; i < proposition.length(); i++) {
+            if (proposition.length()-i-2 > 0) {
+                String test100 = "" + proposition.charAt(i) + proposition.charAt(i + 1) + proposition.charAt(i + 2);
+                if  (test100.equals("100")){
+                    verif.add(test100);
+                    i++;
+                    i++;
+                    continue;
+                }
+            }
+            if (proposition.length()-i-1 > 0) {
+                String testdizaine = "" + proposition.charAt(i) + proposition.charAt(i + 1);
+                if (testdizaine.equals("25") || testdizaine.equals("50") || testdizaine.equals("75") || testdizaine.equals("10")) {
+                    verif.add(proposition.charAt(i) + "" + proposition.charAt(i + 1));
+                    i++;
+                    continue;
+                }
+            }
+            if (Character.toString(proposition.charAt(i)).matches("[0-9]")) {
+                verif.add(Character.toString(proposition.charAt(i)));
+            }
+        }
+        int resultat = Integer.parseInt((verif.get(0)));
+        int selection = 1;
+        for (int i = 1; i < proposition.length(); i++) {
+            if (Character.toString(proposition.charAt(i)).equals("+")){
+                resultat += Integer.parseInt((verif.get(selection)));
+                selection++;
+            }
+            if (Character.toString(proposition.charAt(i)).equals("-")){
+                resultat -= Integer.parseInt((verif.get(selection)));
+                selection++;
+            }
+            if (Character.toString(proposition.charAt(i)).equals("*")){
+                resultat *= Integer.parseInt((verif.get(selection)));
+                selection++;
+            }
+            if (Character.toString(proposition.charAt(i)).equals("/")){
+                resultat /= Integer.parseInt((verif.get(selection)));
+                selection++;
+            }
+        }
+        System.out.println(resultat);
+        for (int i = 0; i < plaquette.size(); i++) {
+            for (int j = 0; j < verif.size(); j++) {
+                if ((plaquette.get(i)+"").contains(verif.get(j)+"")){
+                    verif.remove(j);
+                    plaquette.remove(i);
+                    i = 0;
+                    break;
+                }
+            }
+        }
+        if (verif.size()==0){
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

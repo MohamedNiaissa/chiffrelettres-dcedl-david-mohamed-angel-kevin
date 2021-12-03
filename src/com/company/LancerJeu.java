@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import static java.lang.Integer.parseInt;
+
 public class LancerJeu {
     public static String choixordi;
     public static void menuSelectionMode() {
@@ -44,8 +46,11 @@ public class LancerJeu {
                     System.out.println(objectif);
                     System.out.println(listePlaque);
                     Chrono.chrono(10);
-                    tempsJoueur.tempsJoueurReponseLettre();
+                    String calcul = Main.scan.next();
                     RechercheCompte.toutOrdre(listePlaque,objectif);
+                    boolean calculcorrect = Verification.verificateurReponseCalcul(listePlaque,calcul);
+                    System.out.println(calculcorrect);
+                    System.out.println();
 
                     // Lettres
                     ArrayList<String> tablettre = Lettre.partieLettreUnJoueur(name);
