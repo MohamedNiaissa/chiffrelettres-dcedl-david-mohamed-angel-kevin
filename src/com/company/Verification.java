@@ -1,5 +1,4 @@
 package com.company;
-
 import java.util.ArrayList;
 
 public class Verification {
@@ -18,11 +17,8 @@ public class Verification {
 
 
                 for (int j = 0; j < mot.length(); j++) {
-
                     listeDecouperMot.add(mot.charAt(j));
-
                 }
-
                 for (int h = 0; h < listeDecouperMot.size(); h++) {
                     String str = Character.toString(listeDecouperMot.get(h));
                     listeDecouperMotString.add(str);
@@ -32,21 +28,26 @@ public class Verification {
 
 
                 for (int k = 0; k < listeDecouperMot.size(); k++) {
-
                     for (int j = 0; j < tablettre.size(); j++) {
 
                         if (listeDecouperMotString.get(k).equals(tablettre.get(j))) {
                             compteur++;
                             tablettre.remove(j);
                             break;
-
                         }
                     }
                 }
 
 
-            }
+                if(compteur == mot.length()){
+                    System.out.println("Vrai mot");
+                    return true;
+                }else {
+                    System.out.println("Faux mot");
+                    return false;
+                }
 
+            }
         }
         if (compteur == mot.length()) {
             return true;
@@ -55,6 +56,7 @@ public class Verification {
         }
 
 
+        return true;
 
     }
 

@@ -1,60 +1,58 @@
 package com.company;
-
 import java.util.ArrayList;
 
 public class LancerJeu {
     public static void menuSelectionMode() {
         System.out.println("""
-                ****************************
-                Menu selection de mode
-                ****************************
-                1) Joueur contre machine
-                2) Joueur 1 contre Joueur 2
-                ****************************
-                3) Revenir au menu principal
+                ***********************************************************
+                ****************** Menu selection de mode *****************
+                ***********************************************************
+                Pour jouer contre la machine tapez -> 1
+                Pour jouer contre un autre jouer tapez -> 2
+                ***********************************************************
+                Pour revenir au menu principal tapez -> 3
+                ***********************************************************
                 """);
 
         String choixJouer = "";
         choixJouer = Main.scan.nextLine();
-        ArrayList<String> listMots = RecupMots.extraireMots();
-
-        Verification.scoreJoueur1 = 0;
-        Verification.scoreJoueur2 = 0;
         switch (choixJouer) {
 
             case "1" -> {
-                System.out.println("Joueur contre machine");
-                ArrayList<String> tablettre = Lettre.partieLettreUnJoueur();
-                Chrono.chrono(10);
-                String reponseUtilisateur = tempsJoueur.tempsJoueurReponseLettre();
                 Boolean verifValiditeReponse = Verification.verificateurReponseMot(listMots,tablettre,reponseUtilisateur);
-                String reponseMachine = RechercheMotLong.motLong(listMots,tablettre);
-
+                int manche = 1;
+                for (int i = 0; i < 3; i++) {
+                    System.out.println("\nManche : " + manche);
+                    // Lettres
+                    ArrayList<String> tablettre = Lettre.partieLettreUnJoueur();
+                    Chrono.chrono(2);
+                    String reponseUtilisateur = tempsJoueur.tempsJoueurReponseLettre();
+                    manche +=1;
+                    ArrayList<String> listMots = RecupMots.extraireMots();
+                    Verification.verificateurReponseMot(listMots,tablettre,reponseUtilisateur);
+                    String reponseMachine = RechercheMotLong.motLong(listMots,tablettre);
                 if (verifValiditeReponse){
                     Verification.jouerGagnantMancheLettre(reponseUtilisateur,reponseMachine);
-
                 }else {
+
                     System.out.println("L'IA a trouvé le mot " + reponseMachine);
                     Verification.scoreJoueur2++;
                     System.out.println("Votre réponse n'étant point valide l'IA gagne cette étape");
                     System.out.println("L'IA a "+Verification.scoreJoueur2+" points.");
 
                 }
-
-
-               /* long debut = System.currentTimeMillis();
-                long fin = System.currentTimeMillis();
-                if (fin-debut > 30000){
-                    System.out.println("Vous avez été trop long");
                 }
-                System.out.println("Résultat enregistré"); */
             }
             case "2" -> {
-                System.out.println("Joueur 1 contre jouer 2");
-                ArrayList<String> tablettre = Lettre.partieDeuxJoueurs();
-                Chrono.chrono(10);
+                int manche = 1;
+                for (int i = 0; i < 3; i++) {
+                    System.out.println("\nManche : " + manche);
+                    // Lettres
+                    ArrayList<String> tablettre = Lettre.partieDeuxJoueurs();
+                    Chrono.chrono(10);
+                    manche +=1;
+                }
                 System.out.println("Joueur1, veuillez saisir votre mot: ");
-                String reponseUtilisateur1 = tempsJoueur.tempsJoueurReponseLettre();
                 System.out.println("Joueur2, veuillez saisir votre mot: ");
                 String reponseUtilisateur2 = tempsJoueur.tempsJoueurReponseLettre();
                 Boolean verifValiditeReponse1 = Verification.verificateurReponseMot(listMots,tablettre,reponseUtilisateur1);
@@ -89,8 +87,8 @@ public class LancerJeu {
 
 
 
+                String reponseUtilisateur1 = tempsJoueur.tempsJoueurReponseLettre();
             }
-
             case "3" -> {
             }
             default -> {
