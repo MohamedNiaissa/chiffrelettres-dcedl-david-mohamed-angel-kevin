@@ -4,9 +4,23 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * Type Lancer jeu.
+ */
 public class LancerJeu {
     public static String choixordi;
+
+    /**
+     * Sélection mode menu.
+     */
     public static void menuSelectionMode() {
+        /**
+         * Affiche le menu qui contient le mode jeu :
+         * 1. Joueur contre machine
+         * 2. Joueur 1 contre Joueur 2
+         * 3. Revenir au menu principal
+         */
+
         System.out.println("""
                 *********************************
                 Sélectionnez le nombre de joueurs
@@ -56,13 +70,6 @@ public class LancerJeu {
                     Verification.verificateurReponseMot(listMots,tablettre,motUtilisateur);
                     tempsJoueur.tempsJoueurReponseLettre();
                 }
-
-               /* long debut = System.currentTimeMillis();
-                long fin = System.currentTimeMillis();
-                if (fin-debut > 30000){
-                    System.out.println("Vous avez été trop long");
-                }
-                System.out.println("Résultat enregistré"); */
             }
             case "2" -> {
                 System.out.println("Joueur 1 contre jouer 2");

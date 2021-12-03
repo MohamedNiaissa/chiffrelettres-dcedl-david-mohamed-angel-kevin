@@ -2,24 +2,27 @@ package com.company;
 import java.util.*;
 
 
-
-
+/**
+ * Type Main.
+ */
 public class Main {
+    /**
+     * Scan constant.
+     */
     public static Scanner scan = new Scanner(System.in);
 
+    /**
+     * The entry point of application.
+     *
+     * @param args the input arguments
+     */
     public static void main(String[] args) {
-
 
         System.out.println("""
                 ********************************
                 Bienvenue aux Chiffres & Lettres
                 ********************************
                 """);
-
-
-
-
-
 
         boolean jeuActif = true;
         while (jeuActif) {

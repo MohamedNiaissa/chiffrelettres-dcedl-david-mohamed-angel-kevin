@@ -5,6 +5,9 @@ import java.util.List;
 
 import static java.lang.Integer.parseInt;
 
+/**
+ * Type Recherche compte.
+ */
 public class RechercheCompte{
     static int[] operation = new int[5];
     static List<Integer> list = new ArrayList<>();
@@ -15,7 +18,15 @@ public class RechercheCompte{
     static String objectif = 0+"";
     static String pluspres = 1000+"";
     static String valeur = 0+"";
+
+    /**
+     * Vérification.
+     */
     public static void verification(){
+        /**
+         * Vérifie que les opérations définit dans la liste opération (Addition,Soustraction,Multiplication,Division) appliqué aux nombres de la liste list puisse atteindre l'objectif
+         * Affiche "l'objectif" ou le résultat et résultat le plus proche
+         */
         ope = list.get(0) + "";
         valeur = list.get(0) + "";
         sauvegardeope = "";
@@ -92,7 +103,14 @@ public class RechercheCompte{
             plusprestrouve = parseInt(objectif) - parseInt(valeur);
         }
     }
+
+    /**
+     * Toute operation.
+     */
     public static void touteOperation(){
+        /**
+         * Génère la liste des opérations élémentaires(Addition,Soustraction,Multiplication,Division) qui seront appliqué aux nombres de la liste list
+         */
         for (int i = 0; i < 4; i++) {
             operation[i] = 0;
         }
@@ -117,7 +135,18 @@ public class RechercheCompte{
             operation[1]=0;
         }
     }
+
+    /**
+     * Tout ordre.
+     * @param plaquette the plaquette
+     * @param recherche the recherche
+     */
     public static void toutOrdre(List<Integer> plaquette, String recherche){
+        /**
+         * Récupère la liste des plaques choisis par l'utilisateur et la machine ou les utilisateurs et renvoi si les nombres fournis permettent d'atteindre l'objectif
+         * Renvoie les solutions pour atteindre l'objectif si celui-ci est atteignable
+         * Sinon affiche les opérations du résultat plus proche
+         */
         list = plaquette;
         objectif = recherche;
         for (int j = 0; j < 5; j++) {

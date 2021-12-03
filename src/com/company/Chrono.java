@@ -1,8 +1,18 @@
 package com.company;
 
+/**
+ * Type Chrono.
+ */
 public class Chrono {
 
+    /**
+     * Chrono.
+     * @param seconde une seconde
+     */
     public static void chrono(int seconde){
+        /**
+         * Renvoi un décompte
+         */
         int temps = seconde;
         System.out.println(0 + "...|...10....|...20....|...30....|...40....|...50....|..." + temps);
         for (int i = 0; i < seconde; i++) {

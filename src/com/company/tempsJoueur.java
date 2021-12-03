@@ -2,21 +2,24 @@ package com.company;
 
 import java.util.*;
 
+/**
+ * Type Temps joueur.
+ */
 public class tempsJoueur {
 
-
-
+    /**
+     * Temps joueur reponse lettre string.
+     *
+     * @return un string
+     */
     public static String tempsJoueurReponseLettre(){
+        /**
+         *
+         */
         String valUtilistateur = "";
-
-
         try {
-
         String str ="";
-
         final boolean[] bool = {true};
-
-
         TimerTask task = new TimerTask()
 
         {
@@ -33,24 +36,15 @@ public class tempsJoueur {
                     bool[0] = false;
                     answer = "PasDeReponse";
 
-
                 }
             }
         };
 
-
-
         while (bool[0]) {
-
             Timer timer = new Timer();
             timer.schedule(task, 10000);
 
-          /*  Scanner sc = new Scanner(System.in);
-            String in = sc.nextLine();
-*/
             valUtilistateur = SaisieUtilisateur.saisitMot();
-
-
             timer.cancel();
             System.out.println("mot de l'utilisateur: "+valUtilistateur);
             return valUtilistateur;
@@ -59,14 +53,6 @@ public class tempsJoueur {
     }catch (Exception e){
             System.out.println("ok " + e);
         }
-
-
-
-
         return "fin";
-
         }
-
-
-
 }

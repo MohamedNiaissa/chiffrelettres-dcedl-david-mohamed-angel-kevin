@@ -2,9 +2,23 @@ package com.company;
 
 import java.util.ArrayList;
 
+/**
+ * Type Verification.
+ */
 public class Verification {
 
+    /**
+     * Verificateur réponse mot boolean.
+     *
+     * @param tab       un tab
+     * @param tablettre un tablettre
+     * @param mot       un mot
+     * @return un boolean
+     */
     public static boolean verificateurReponseMot(ArrayList<String> tab,ArrayList<String> tablettre ,String mot){
+        /**
+         *
+         */
 
         ArrayList<Character> listeDecouperMot = new ArrayList<>();
         ArrayList<String> listeDecouperMotString = new ArrayList<>();
@@ -49,7 +63,6 @@ public class Verification {
                         }
                     }
                 }
-
                 System.out.println("compteur = " + compteur);
 
                 if(compteur == mot.length()){
@@ -59,15 +72,9 @@ public class Verification {
                     System.out.println("Faux mot");
                     return false;
                 }
-
             }
 
         }
-
-
         return true;
-
     }
-
-
 }
